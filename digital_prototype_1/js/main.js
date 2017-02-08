@@ -24,6 +24,6 @@ window.onload = function ()
 
     function createPlayer(x, y)
     {
-        var player = players.create(x, y, playersprite);
+        var player = players.create(x, y, 'playersprite');
     }
 };
