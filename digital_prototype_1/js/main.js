@@ -1,12 +1,12 @@
 window.onload = function () {
     "use strict";
 
-    var game = new Phaser.Game(400, 800, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
+    var game = new Phaser.Game(500, 1000, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
     var inputs;
 
     function preload() {
         // Load player sprite
-        game.load.image('playersprite', 'digital_prototype_1/assets/playersprite.png');
+        game.load.image('playersprite', 'assets/playersprite.png');
 
     }
 
