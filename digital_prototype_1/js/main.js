@@ -5,14 +5,13 @@ window.onload = function ()
     var game = new Phaser.Game(400, 800, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
     
     var background;
+    var player;
  
 
     function preload()
     {
-        // Load player sprite
         game.load.image('playersprite', "assets/playersprite.png");
         game.load.image('background', "assets/background.png");
-
     }
 
     function create()
