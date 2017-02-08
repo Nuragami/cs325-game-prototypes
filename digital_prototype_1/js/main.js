@@ -15,6 +15,8 @@ window.onload = function () {
         players = game.add.group();
         createPlayer(200, 200);
         inputs = game.input.keyboard.createCursorKeys();
+
+        game.add.sprite(0, 0, 'playersprite')
     }
 
     function update() {
@@ -22,7 +24,6 @@ window.onload = function () {
     }
 
     function createPlayer(x, y) {
-        game.add.sprite(x, y, 'playersprite');
         var player = players.create(x, y, 'playersprite');
         player.body.colliderWorldBounds = true;
 
