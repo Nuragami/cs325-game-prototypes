@@ -4,6 +4,7 @@ window.onload = function () {
     var game = new Phaser.Game(400, 800, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
     var inputs;
     var background;
+    var players;
 
     function preload() {
         // Load player sprite
