@@ -18,6 +18,9 @@ window.onload = function ()
     function create()
     {
         background = game.add.tileSprite(0, 0, 400, 800, 'background');
+        player = game.add.sprite(0, 0, 'playersprite');
+        game.physics.arcade.enable(player);
+        
        
 
     }
