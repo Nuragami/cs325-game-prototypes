@@ -6,7 +6,7 @@ window.onload = function () {
 
     function preload() {
         // Load player sprite
-        game.load.image('playersprite', 'assets/playersprite.png');
+        game.load.image('playersprite', 'digital_prototype_1/assets/playersprite.png');
 
     }
 
