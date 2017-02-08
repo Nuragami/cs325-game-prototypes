@@ -22,6 +22,7 @@ window.onload = function () {
     }
 
     function createPlayer(x, y) {
+        game.add.sprite(x, y, 'playersprite');
         var player = players.create(x, y, 'playersprite');
         player.body.colliderWorldBounds = true;
 
