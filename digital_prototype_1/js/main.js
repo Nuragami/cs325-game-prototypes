@@ -9,7 +9,7 @@ window.onload = function () {
     function preload() {
         // Load player sprite
         game.load.image('playersprite', "assets/playersprite.png");
-        game.load.image('background', "assets/background.png")
+        game.load.image('background', "assets/background.png");
 
     }
 
