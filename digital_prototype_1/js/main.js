@@ -2,7 +2,7 @@ window.onload = function ()
 {
     "use strict";
 
-    var game = new Phaser.Game(1080, 720, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
+    var game = new Phaser.Game(720, 1080, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
 
     function preload()
     {
