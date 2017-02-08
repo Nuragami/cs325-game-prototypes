@@ -1,25 +1,32 @@
 window.onload = function () {
     "use strict";
 
-    var game = new Phaser.Game(500, 1000, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
+    var game = new Phaser.Game(400, 800, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
     var inputs;
+    var background;
 
     function preload() {
         // Load player sprite
-        game.load.image('playersprite', 'assets/playersprite.png');
+        game.load.image('playersprite', "assets/playersprite.png");
+        game.load.image('background', "assets/background.png")
 
     }
 
     function create() {
+        background = game.add.tileSprite(0, 0, 400, 800, 'background');
+
         game.physics.startSystem(Phaser.Physics.ARCADE);
+
         players = game.add.group();
         createPlayer(200, 200);
         inputs = game.input.keyboard.createCursorKeys();
 
         game.add.sprite(0, 0, 'playersprite')
+
     }
 
     function update() {
+        background.tilePosition.y += 2;
         playerUpdate();
     }
 
