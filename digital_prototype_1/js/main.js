@@ -14,7 +14,7 @@ window.onload = function ()
     function create()
     {       
         players = game.add.group();
-        createPlayer();
+        createPlayer(200, 700);
     }
 
     function update()
@@ -22,8 +22,8 @@ window.onload = function ()
       
     }
 
-    function createPlayer()
+    function createPlayer(x, y)
     {
-        var player = players.create(0,0, playersprite);
+        var player = players.create(x, y, playersprite);
     }
 };
