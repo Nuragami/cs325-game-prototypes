@@ -29,6 +29,7 @@ window.onload = function ()
     var winTextCowboy;
     var winTextAsteriod;
  
+    var music;
 
     function preload()
     {
@@ -37,11 +38,15 @@ window.onload = function ()
         game.load.image('cowboyBullet', "assets/cowboyBullet.png");
         game.load.image('asteriodBullet', "assets/asteriodBullet.png");
         game.load.image('asteriod', "assets/asteriod.png");
+        game.load.audio('newdawn', "assets/newdawn.mp3");
     }
 
     function create()
     {
         background = game.add.tileSprite(0, 0, 800, 400, 'background');
+
+        music = game.add.audio('newdawn');
+        music.play();
 
         cowboy = game.add.sprite(game.world.centerX - 200, game.world.centerY, 'cowboy');
         game.physics.enable(cowboy, Phaser.Physics.ARCADE);
