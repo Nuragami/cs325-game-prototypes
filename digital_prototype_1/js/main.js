@@ -39,7 +39,7 @@ window.onload = function ()
         bullets.setAll('outofBoundsKill', true);
         bullets.setAll('checkWorldBounds', true);
 
-        fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+        fireButton = game.input.keyboard.addKey(Phaser.Keyboard.ONE);
         
        
 
@@ -50,6 +50,7 @@ window.onload = function ()
         background.tilePosition.y += 2;
 
         player.body.velocity.x = 0;
+        player.body.velocity.y = 0;
         player.body.colliderWorldBounds = true;
 
         if(cursors.left.isDown)
