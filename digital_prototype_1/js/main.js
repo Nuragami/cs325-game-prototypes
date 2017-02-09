@@ -115,6 +115,9 @@ window.onload = function ()
             FireBulletCowboy();
         }
 
+        asteriod.body.velocity.x = 0;
+        asteriod.body.velocity.y = 0;
+
         if (asteriodLeftButton.isDown) {
             asteriod.body.velocity.x = -350;
         }
