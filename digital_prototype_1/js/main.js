@@ -10,7 +10,6 @@ window.onload = function ()
     var cursors;
 
     var bullets;
-    var bullet;
     var bulletTime = 0;
     var fireButton;
  
@@ -83,10 +82,10 @@ window.onload = function ()
     {
         if(game.time.now > bulletTime)
         {
-            bullet = bullets.getFirstExists(false);
+            var bullet = bullets.getFirstExists(false);
             if(bullet)
             {
-                bullet.reset(player.x, player, y);
+                bullet.reset(player.x, player.y);
                 bullet.body.velocity.y = -400;
                 bulletTime = game.time.now + 200;
             }
