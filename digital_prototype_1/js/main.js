@@ -2,23 +2,23 @@ window.onload = function ()
 {
     "use strict";
 
-    var game = new Phaser.Game(400, 800, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
+    var game = new Phaser.Game(800, 400, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
     
     var background;
 
-    var player;
     var cursors;
 
-    var bullets;
-    var bulletTime = 0;
-    var fireButton;
+    var cowboy;   
+    var bullets1;
+    var bulletTime1 = 0;
+    var fireButton1;
 
     var asteriod;
  
 
     function preload()
     {
-        game.load.image('playersprite', "assets/playersprite.png");
+        game.load.image('cowboy', "assets/cowboy.png");
         game.load.image('background', "assets/background.png");
         game.load.image('bullet', "assets/bullet.png");
         game.load.image('asteriod', "assets/asteriod.png");
@@ -26,27 +26,32 @@ window.onload = function ()
 
     function create()
     {
-        background = game.add.tileSprite(0, 0, 400, 800, 'background');
+        background = game.add.tileSprite(0, 0, 800, 400, 'background');
 
-        player = game.add.sprite(game.world.centerX, game.world.centerY + 200, 'playersprite');
-        game.physics.enable(player, Phaser.Physics.ARCADE);
-        player.enableBody = true;
-        player.body.colliderWorldBounds = true;
+        cowboy = game.add.sprite(game.world.centerX - 200, game.world.centerY, 'cowboy');
+        game.physics.enable(cowboy, Phaser.Physics.ARCADE);
+        cowboy.enableBody = true;
+        cowboy.body.colliderWorldBounds = true;
+
+        asteriod = game.add.sprite(game.world.centerX + 200, game.world.centerY, 'asteriod');
+        game.physics.enable(asteriod, Phaser.Physics.ARCADE);
+        asteriod.enableBody = true;
+        asteriod.body.colliderWorldBounds = true;
 
         cursors = game.input.keyboard.createCursorKeys();
 
-        bullets = game.add.group();
-        bullets.enableBody = true;
-        bullets.physicsBodyType = Phaser.Physics.ARCADE;
-        bullets.createMultiple(30, 'bullet');
-        bullets.setAll('anchor.x', 0.5);
-        bullets.setAll('anchor.y', 1);
-        bullets.setAll('outofBoundsKill', true);
-        bullets.setAll('checkWorldBounds', true);
+        bullets1 = game.add.group();
+        bullets1.enableBody = true;
+        bullets1.physicsBodyType = Phaser.Physics.ARCADE;
+        bullets1.createMultiple(30, 'bullet');
+        bullets1.setAll('anchor.x', 0.5);
+        bullets1.setAll('anchor.y', 1);
+        bullets1.setAll('outofBoundsKill', true);
+        bullets1.setAll('checkWorldBounds', true);
 
         fireButton = game.input.keyboard.addKey(Phaser.Keyboard.ONE);
 
-        asteriod = game.add.sprite(game.world.centerX, game.world.centerY - 300, 'asteriod');
+       
 
       
         
@@ -56,47 +61,71 @@ window.onload = function ()
 
     function update()
     {
-        background.tilePosition.y += 2;
+        background.tilePosition.x += 2;
 
-        player.body.velocity.x = 0;
-        player.body.velocity.y = 0;
+        cowboy.body.velocity.x = 0;
+        cowboy.body.velocity.y = 0;
         
 
-        if(cursors.left.isDown)
+        if(cursors.a.isDown)
         {
-            player.body.velocity.x = -350;
+            cowboy.body.velocity.x = -350;
         }
-        if(cursors.right.isDown)
+        if(cursors.d.isDown)
         {
-            player.body.velocity.x = 350;
+            cowboy.body.velocity.x = 350;
+        }
+        if (cursors.w.isDown)
+        {
+            cowboy.body.velocity.y = -300
+        }
+        if (cursors.s.isDown)
+        {
+            cowboy.body.velocity.y = 300;
+        }           
+
+        if(fireButton1.isDown)
+        {
+            fireBullet1();
+        }
+
+
+        if (cursors.left.isDown)
+        {
+            asteriod.body.velocity.x = -350;
+        }
+        if (cursors.right.isDown)
+        {
+            asteriod.body.velocity.x = 350;
         }
         if (cursors.up.isDown)
         {
-            player.body.velocity.y = -300
+            asteriod.body.velocity.y = -300
         }
         if (cursors.down.isDown)
         {
-            player.body.velocity.y = 300;
+            asteriod.body.velocity.y = 300;
         }
-           
 
-        if(fireButton.isDown)
+        if (fireButton2.isDown)
         {
-            fireBullet();
+            fireBullet2();
         }
+
+
       
     }
 
-    function fireBullet()
+    function fireBullet1()
     {
-        if(game.time.now > bulletTime)
+        if(game.time.now > bulletTime1)
         {
-            var bullet = bullets.getFirstExists(false);
+            var bullet = bullets1.getFirstExists(false);
             if(bullet)
             {
-                bullet.reset(player.x + 14, player.y);
-                bullet.body.velocity.y = -400;
-                bulletTime = game.time.now + 200;
+                bullet.reset(cowboy.x + 14, cowboy.y);
+                bullet.body.velocity.x = 400;
+                bulletTime1 = game.time.now + 200;
             }
         }
     }
