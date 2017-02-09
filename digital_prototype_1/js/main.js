@@ -57,7 +57,7 @@ window.onload = function ()
         cowboyBullets = game.add.group();
         cowboyBullets.enableBody = true;
         cowboyBullets.physicsBodyType = Phaser.Physics.ARCADE;
-        cowboyBullets.createMultiple(100, 'cowboyBullet');
+        cowboyBullets.createMultiple(1000, 'cowboyBullet');
         cowboyBullets.setAll('anchor.x', 1);
         cowboyBullets.setAll('anchor.y', 0.5);
         cowboyBullets.setAll('outofBoundsKill', true);
@@ -77,7 +77,7 @@ window.onload = function ()
         asteriodBullets = game.add.group();
         asteriodBullets.enableBody = true;
         asteriodBullets.physicsBodyType = Phaser.Physics.ARCADE;
-        asteriodBullets.createMultiple(100, 'asteriodBullet');
+        asteriodBullets.createMultiple(1000, 'asteriodBullet');
         asteriodBullets.setAll('anchor.x', 1);
         asteriodBullets.setAll('anchor.y', 0.5);
         asteriodBullets.setAll('outofBoundsKill', true);
