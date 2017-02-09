@@ -140,8 +140,8 @@ window.onload = function ()
             FireBulletAsteriod();
         }
 
-        game.physics.arcade.overlap(cowboyBullets, asteriod, collisionHandler, null, this);
-        game.physics.arcade.overlap(asteriodBullets, cowboy, collisionHandler, null, this);
+        game.physics.arcade.overlap(cowboyBullets, asteriod, collisionHandlerAsteriod, null, this);
+        game.physics.arcade.overlap(asteriodBullets, cowboy, collisionHandlerCowboy, null, this);
 
     }
 
@@ -173,7 +173,7 @@ window.onload = function ()
         }
     }
 
-    function collisionHandler(cowboyBullets, asteriod)
+    function collisionHandlerAsteriod(cowboyBullets, asteriod)
     {
         cowboyBullets.kill();
         asteriod.kill();
@@ -181,7 +181,7 @@ window.onload = function ()
         asteriodFireButton = game.input.keyboard.removeKey(Phaser.Keyboard.ZERO);
     }
 
-    function collisionHandler(asteriodBullets, cowboy)
+    function collisionHandlerCowboy(asteriodBullets, cowboy)
     {
         asteriodBullets.kill();
         cowboy.kill();
