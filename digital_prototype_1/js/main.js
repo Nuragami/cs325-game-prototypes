@@ -31,8 +31,8 @@ window.onload = function ()
     {
         game.load.image('cowboy', "assets/cowboy.png");
         game.load.image('background', "assets/background.png");
-        game.load.image('bullet', "assets/bullet.png");
-        game.load.image('bullet2', "assets/bullet2.png");
+        game.load.image('cowboyBullet', "assets/cowboyBullet.png");
+        game.load.image('asteriodBullet', "assets/asteriodBullet.png");
         game.load.image('asteriod', "assets/asteriod.png");
     }
 
@@ -54,7 +54,7 @@ window.onload = function ()
         cowboyBullets = game.add.group();
         cowboyBullets.enableBody = true;
         cowboyBullets.physicsBodyType = Phaser.Physics.ARCADE;
-        cowboyBullets.createMultiple(30, 'bullet');
+        cowboyBullets.createMultiple(30, 'cowboyBullet');
         cowboyBullets.setAll('anchor.x', 1);
         cowboyBullets.setAll('anchor.y', 0.5);
         cowboyBullets.setAll('outofBoundsKill', true);
@@ -74,7 +74,7 @@ window.onload = function ()
         asteriodBullets = game.add.group();
         asteriodBullets.enableBody = true;
         asteriodBullets.physicsBodyType = Phaser.Physics.ARCADE;
-        asteriodBullets.createMultiple(30, 'bullet2');
+        asteriodBullets.createMultiple(30, 'asteriodBullet');
         asteriodBullets.setAll('anchor.x', 1);
         asteriodBullets.setAll('anchor.y', 0.5);
         asteriodBullets.setAll('outofBoundsKill', true);
@@ -116,24 +116,21 @@ window.onload = function ()
         }
 
         if (asteriodLeftButton.isDown) {
-            cowboy.body.velocity.x = -350;
+            asteriod.body.velocity.x = -350;
         }
         if (asteriodRightButton.isDown) {
-            cowboy.body.velocity.x = 350;
+            asteriod.body.velocity.x = 350;
         }
         if (asteriodUpButton.isDown) {
-            cowboy.body.velocity.y = -300
+            asteriod.body.velocity.y = -300
         }
         if (asteriodDownButton.isDown) {
-            cowboy.body.velocity.y = 300;
+            asteriod.body.velocity.y = 300;
         }
-        if (cowboyFireButton.isDown) {
+        if (asteriodFireButton.isDown) {
             FireBulletAsteriod();
         }
 
-
-     
-      
     }
 
     function FireBulletCowboy()
