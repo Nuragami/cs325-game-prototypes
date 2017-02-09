@@ -6,6 +6,7 @@ window.onload = function ()
     
     var background;
     var player;
+    var cursors;
  
 
     function preload()
@@ -17,8 +18,12 @@ window.onload = function ()
     function create()
     {
         background = game.add.tileSprite(0, 0, 400, 800, 'background');
-        player = game.add.sprite(0, 0, 'playersprite');
-        game.physics.arcade.enable(player);
+
+        player = game.add.sprite(game.world.centerX, game.world.centerY + 200, 'playersprite');
+        game.physics.enable(player, Phaser.Physics.ARCADE);
+
+        cursors = game.input.keyboard.createCursorKeys();
+
         
        
 
@@ -27,6 +32,15 @@ window.onload = function ()
     function update()
     {
         background.tilePosition.y += 2;
+
+        if(cursors.left.isDown)
+        {
+            player.body.velocity.x = -350;
+        }
+        if(cursors.right.isDown)
+        {
+            player.body.velocity.x = 350;
+        }
       
     }
 
