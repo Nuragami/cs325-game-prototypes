@@ -12,13 +12,16 @@ window.onload = function ()
     var bullets;
     var bulletTime = 0;
     var fireButton;
+
+    var asteriod;
  
 
     function preload()
     {
         game.load.image('playersprite', "assets/playersprite.png");
         game.load.image('background', "assets/background.png");
-        game.load.image('bullet', "assets/bullet.png")
+        game.load.image('bullet', "assets/bullet.png");
+        game.load.image('asteriod', "assets/asteriod.png");
     }
 
     function create()
@@ -27,6 +30,8 @@ window.onload = function ()
 
         player = game.add.sprite(game.world.centerX, game.world.centerY + 200, 'playersprite');
         game.physics.enable(player, Phaser.Physics.ARCADE);
+        player.enableBody = true;
+        player.body.colliderWorldBounds = true;
 
         cursors = game.input.keyboard.createCursorKeys();
 
@@ -40,6 +45,10 @@ window.onload = function ()
         bullets.setAll('checkWorldBounds', true);
 
         fireButton = game.input.keyboard.addKey(Phaser.Keyboard.ONE);
+
+        asteriod = game.add.sprite(game.world.centerX, game.world.centerY - 300, 'asteriod');
+
+      
         
        
 
@@ -51,7 +60,7 @@ window.onload = function ()
 
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
-        player.body.colliderWorldBounds = true;
+        
 
         if(cursors.left.isDown)
         {
@@ -91,6 +100,8 @@ window.onload = function ()
             }
         }
     }
+
+ 
 
    
 };
