@@ -146,7 +146,7 @@ window.onload = function ()
             var bullet = cowboyBullets.getFirstExists(false);
             if(bullet)
             {
-                bullet.reset(cowboy.x, cowboy.y + 14);
+                bullet.reset(cowboy.x, cowboy.y - 14);
                 bullet.body.velocity.x = 400;
                 bulletTime = game.time.now + 200;
             }
@@ -171,12 +171,14 @@ window.onload = function ()
     {
         cowboyBullets.kill();
         asteriod.kill();
+        asteriodFireButton = game.input.keyboard.removeKey(Phaser.Keyboard.ZERO);
     }
 
     function collisionHandler(asteriodBullets, cowboy)
     {
         asteriodBullets.kill();
         cowboy.kill();
+        cowboyFireButton = game.input.keyboard.removeKey(Phaser.Keyboard.ZERO);
     }
 
  
