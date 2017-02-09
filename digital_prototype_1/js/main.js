@@ -49,12 +49,12 @@ window.onload = function ()
         cowboyDownButton = game.input.keyboard.addKey(Phaser.Keyboard.S);
         cowboyLeftButton = game.input.keyboard.addKey(Phaser.Keyboard.A);
         cowboyRightButton = game.input.keyboard.addKey(Phaser.Keyboard.D);
-        cowboyFireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACE);
+        cowboyFireButton = game.input.keyboard.addKey(Phaser.Keyboard.ONE);
 
         cowboyBullets = game.add.group();
         cowboyBullets.enableBody = true;
         cowboyBullets.physicsBodyType = Phaser.Physics.ARCADE;
-        cowboyBullets.createMultiple(30, 'cowboyBullet');
+        cowboyBullets.createMultiple(100, 'cowboyBullet');
         cowboyBullets.setAll('anchor.x', 1);
         cowboyBullets.setAll('anchor.y', 0.5);
         cowboyBullets.setAll('outofBoundsKill', true);
@@ -74,7 +74,7 @@ window.onload = function ()
         asteriodBullets = game.add.group();
         asteriodBullets.enableBody = true;
         asteriodBullets.physicsBodyType = Phaser.Physics.ARCADE;
-        asteriodBullets.createMultiple(30, 'asteriodBullet');
+        asteriodBullets.createMultiple(100, 'asteriodBullet');
         asteriodBullets.setAll('anchor.x', 1);
         asteriodBullets.setAll('anchor.y', 0.5);
         asteriodBullets.setAll('outofBoundsKill', true);
@@ -134,6 +134,9 @@ window.onload = function ()
             FireBulletAsteriod();
         }
 
+        game.physics.arcade.overlap(cowboyBullets, asteriod, collisionHandler, null, this);
+        game.physics.arcade.overlap(asteriodBullets, cowboy, collisionHandler, null, this);
+
     }
 
     function FireBulletCowboy()
@@ -150,15 +153,30 @@ window.onload = function ()
         }
     }
 
-    function FireBulletAsteriod() {
-        if (game.time.now > bulletTime) {
+    function FireBulletAsteriod()
+    {
+        if (game.time.now > bulletTime)
+        {
             var bullet = asteriodBullets.getFirstExists(false);
-            if (bullet) {
+            if (bullet)
+            {
                 bullet.reset(asteriod.x, asteriod.y + 14);
                 bullet.body.velocity.x = -400;
                 bulletTime = game.time.now + 200;
             }
         }
+    }
+
+    function collisionHandler(cowboyBullets, asteriod)
+    {
+        cowboyBullets.kill();
+        asteriod.kill();
+    }
+
+    function collisionHandler(asteriodBullets, cowboy)
+    {
+        asteriodBullets.kill();
+        cowboy.kill();
     }
 
  
