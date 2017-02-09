@@ -25,6 +25,9 @@ window.onload = function ()
     var asteriodRightButton;
 
     var bulletTime = 0;
+
+    var winTextCowboy;
+    var winTextAsteriod;
  
 
     function preload()
@@ -82,7 +85,10 @@ window.onload = function ()
 
         //cursors = game.input.keyboard.createCursorKeys();
 
-  
+        winTextCowboy = game.add.text(game.world.centerX, game.world.centerY, "Cowboy Win!", { font: '32px Arial', fill: '#fff' });
+        winTextCowboy.visible = false;
+        winTextAsteriod = game.add.text(game.world.centerX, game.world.centerY, "Asteriod Win!", { font: '32px Arial', fill: '#fff' });
+        winTextAsteriod.visible = false;
 
     }
 
@@ -146,7 +152,7 @@ window.onload = function ()
             var bullet = cowboyBullets.getFirstExists(false);
             if(bullet)
             {
-                bullet.reset(cowboy.x + 14, cowboy.y + 14);
+                bullet.reset(cowboy.x + 28, cowboy.y + 14);
                 bullet.body.velocity.x = 400;
                 bulletTime = game.time.now + 200;
             }
@@ -171,6 +177,7 @@ window.onload = function ()
     {
         cowboyBullets.kill();
         asteriod.kill();
+        winTextCowboy.visible = true;
         asteriodFireButton = game.input.keyboard.removeKey(Phaser.Keyboard.ZERO);
     }
 
@@ -178,6 +185,7 @@ window.onload = function ()
     {
         asteriodBullets.kill();
         cowboy.kill();
+        winTextAsteriod.visible = true;
         cowboyFireButton = game.input.keyboard.removeKey(Phaser.Keyboard.ZERO);
     }
 
