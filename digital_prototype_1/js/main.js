@@ -10,6 +10,7 @@ window.onload = function ()
     var cursors;
 
     var bullets;
+    var bullet;
     var bulletTime = 0;
     var fireButton;
  
