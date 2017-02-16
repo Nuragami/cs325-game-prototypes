@@ -133,11 +133,11 @@ window.onload = function ()
  }
  function collectItem(body1, body2)
  {
-    body2.sprite.destroy();
+    body2.sprite.kill();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
- } 
+ }
 
 
 
