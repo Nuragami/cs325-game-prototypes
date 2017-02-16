@@ -63,7 +63,9 @@ window.onload = function ()
     {
       createItem();
     }
-    game.physics.arcade.overlap(player, [heart, lung, brain], itemCollection, null, this);
+    game.physics.arcade.overlap(player, heart, collectHeart, null, this);
+    game.physics.arcade.overlap(player, lung, collectLung null, this);
+    game.physics.arcade.overlap(player, brain, collectBrain, null, this);
  }
 
  function createItem()
@@ -103,9 +105,18 @@ window.onload = function ()
   return Math.floor(Math.random() * (max - min + 1)) + min;
  }
 
- function itemCollection(player, [heart, lung, brain])
+ function collectHeart(player, heart)
  {
-     [heart, lung, brain].kill();
+     heart.kill();
  }
+ function collectLung(player, lung)
+ {
+    lung.kill();
+ }
+ function collectBrain(player, brain)
+ {
+    brain.kill();
+ }
+
 
 };
