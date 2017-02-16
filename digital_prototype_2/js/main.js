@@ -41,7 +41,8 @@ window.onload = function ()
   function update()
   {
     //Player stuff
-    player.body.setZeroVelocity();
+    player.body.velocity.x = 0;
+    player.body.velocity.y = 0;
     if (cursors.up.isDown)
     {
       player.body.velocity.y = -300;
