@@ -6,7 +6,8 @@ window.onload = function ()
 
   var background;
   var player;
-  var playerSpeed;
+  //var playerSpeed;
+  var cursors;
 
   function preload()
   {
@@ -32,22 +33,21 @@ window.onload = function ()
   {
     player.body.setZeroVelocity();
 
-     if (cursors.up.isDown)
-     {
-         player.body.velocity.y = 100
-     }
-     else if (cursors.down.isDown)
-     {
-         player.body.velocity.y = -100
-     }
-
-     if (cursors.left.isDown)
-     {
-         player.body.velocity.x = -100;
-     }
-     else if (cursors.right.isDown)
-     {
-         player.body.velocity.x = 100;
-     }
-  }
+    if (cursors.up.isDown)
+    {
+      player.body.velocity.y = 100
+    }
+    else if (cursors.down.isDown)
+    {
+      player.body.velocity.y = -100
+    }
+    if (cursors.left.isDown)
+    {
+      player.body.velocity.x = -100;
+    }
+    else if (cursors.right.isDown)
+    {
+      player.body.velocity.x = -100;
+    }
+ }
 };
