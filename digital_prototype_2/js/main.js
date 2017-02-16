@@ -44,6 +44,8 @@ window.onload = function ()
     player.body.setZeroDamping();
     player.body.fixedRotation = true;
 
+    createEnemy();
+    
     cursors = game.input.keyboard.createCursorKeys();
 
     game.camera.follow(player);
@@ -85,15 +87,6 @@ window.onload = function ()
     {
       createOrgan();
       if(itemCounter > 3)
-      {
-        break;
-      }
-    }
-    zombieCounter = itemCounter%10;
-    while(zombieCounter == 0)
-    {
-      createEnemy();
-      if(zombieCounter != 0)
       {
         break;
       }
