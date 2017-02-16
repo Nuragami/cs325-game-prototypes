@@ -75,13 +75,17 @@ window.onload = function ()
     {
       player.body.velocity.x = 300;
     }
-    if(itemCounter < 3)
+    while(itemCounter <= 3)
     {
-      createItem();
+      createOrgan();
+      if(itemCounter > 3)
+      {
+        break;
+      }
     }
  }
 
- function createItem()
+ function createOrgan()
  {
    var randomItem;
    randomItem = getRandomInt(-1, 3);
