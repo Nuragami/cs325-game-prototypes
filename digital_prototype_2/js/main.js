@@ -103,6 +103,7 @@ window.onload = function ()
      game.physics.p2.enable(heart);
      heart.body.setRectangle(50,50,0,0)
      heart.body.setZeroVelocity();
+     heart.body.static = true;
      player.body.createBodyCallback(heart, collectOrgan, this);
      itemCounter = itemCounter + 1;
    }
@@ -112,6 +113,7 @@ window.onload = function ()
      game.physics.p2.enable(lung);
      lung.body.setRectangle(50,50,0,0)
      lung.body.setZeroVelocity();
+      lung.body.static = true;
      player.body.createBodyCallback(lung, collectOrgan, this);
      itemCounter = itemCounter + 1;
    }
@@ -121,6 +123,7 @@ window.onload = function ()
      game.physics.p2.enable(brain);
      brain.body.setRectangle(50,50,0,0)
      brain.body.setZeroVelocity();
+      brain.body.static = true;
      player.body.createBodyCallback(brain, collectOrgan, this);
      itemCounter = itemCounter + 1;
    }
@@ -147,6 +150,7 @@ window.onload = function ()
    game.physics.p2.enable(zombie);
    zombie.body.setRectangle(100,100,0,0)
    zombie.body.setZeroVelocity();
+   zombie.body.fixedRotation = true;
  }
 
 
