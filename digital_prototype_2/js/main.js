@@ -18,6 +18,7 @@ window.onload = function ()
   var itemCounter = 0;
   var scoreCounter = 0;
   var zombieCounter = 0;
+  var playerHealth = 5;
 
   var text;
 
@@ -151,6 +152,14 @@ window.onload = function ()
    zombie.body.setRectangle(100,100,0,0)
    zombie.body.setZeroVelocity();
    zombie.body.fixedRotation = true;
+   player.body.createBodyCallback(zombie, playerDamage, this);
+ }
+
+ function playerDamage(body1, body2)
+ {
+   body1.sprite.kill();
+   playerHealth = playerHealth - 1;
+
  }
 
 
