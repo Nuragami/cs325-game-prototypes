@@ -91,7 +91,7 @@ window.onload = function ()
      game.physics.p2.enable(heart);
      heart.body.setRectangle(50,50,0,0)
      heart.body.setZeroVelocity();
-     player.body.createBodyCallback(heart, collectItem, this);
+     player.body.createBodyCallback(heart, collectOrgan, this);
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 1)
@@ -100,7 +100,7 @@ window.onload = function ()
      game.physics.p2.enable(lung);
      lung.body.setRectangle(50,50,0,0)
      lung.body.setZeroVelocity();
-     player.body.createBodyCallback(lung, collectItem, this);
+     player.body.createBodyCallback(lung, collectOrgan, this);
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 2)
@@ -109,7 +109,7 @@ window.onload = function ()
      game.physics.p2.enable(brain);
      brain.body.setRectangle(50,50,0,0)
      brain.body.setZeroVelocity();
-     player.body.createBodyCallback(brain, collectItem, this);
+     player.body.createBodyCallback(brain, collectOrgan, this);
      itemCounter = itemCounter + 1;
    }
  }
@@ -121,17 +121,7 @@ window.onload = function ()
   return Math.floor(Math.random() * (max - min + 1)) + min;
  }
 
- function collectOrgan(body, bodyB, shapeA, shapeB, equation)
- {
-   if(body)
-   {
-
-     itemCounter = itemCounter - 1;
-     scoreCounter = scoreCounter + 1;
-     text.setText("You collected " + scoreCounter + " organs!");
-   }
- }
- function collectItem(body1, body2)
+ function collectOrgan(body1, body2)
  {
     body2.sprite.kill();
     itemCounter = itemCounter - 1;
