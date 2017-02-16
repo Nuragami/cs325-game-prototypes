@@ -120,30 +120,17 @@ window.onload = function ()
   return Math.floor(Math.random() * (max - min + 1)) + min;
  }
 
- function collectHeart()
+ function collectOrgan(body, bodyB, shapeA, shapeB, equation)
  {
-    heart.destroy();
-    itemCounter = itemCounter - 1;
-    scoreCounter = scoreCounter + 1;
-    text.setText("You collected " + scoreCounter + " organs!");
-   
+   if(body)
+   {
+     body.sprite.key.destroy();
+     itemCounter = itemCounter - 1;
+     scoreCounter = scoreCounter + 1;
+     text.setText("You collected " + scoreCounter + " organs!");
+   }
  }
- function collectLung()
- {
-    lung.destroy();
-    itemCounter = itemCounter - 1;
-    scoreCounter = scoreCounter + 1;
-    text.setText("You collected " + scoreCounter + " organs!");
 
- }
- function collectBrain()
- {
-    brain.destroy();
-    itemCounter = itemCounter - 1;
-    scoreCounter = scoreCounter + 1;
-    text.setText("You collected " + scoreCounter + " organs!");
-
- }
 
 
 
