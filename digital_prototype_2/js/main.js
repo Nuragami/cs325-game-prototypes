@@ -46,11 +46,11 @@ window.onload = function ()
     player.body.setZeroVelocity();
     if (cursors.up.isDown)
     {
-      player.body.velocity.y = -300
+      player.body.velocity.y = -300;
     }
     else if (cursors.down.isDown)
     {
-      player.body.velocity.y = 300
+      player.body.velocity.y = 300;
     }
     if (cursors.left.isDown)
     {
@@ -62,7 +62,7 @@ window.onload = function ()
     }
  }
 
- function createItem();
+ function createItem()
  {
    var randomItem;
    randomItem = getRandomInt(-1, 3);
