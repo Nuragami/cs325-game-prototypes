@@ -28,10 +28,12 @@ window.onload = function ()
   {
     background = game.add.tileSprite(0, 0, 1600, 600, 'background');
     game.world.setBounds(0, 0, 1600, 600);
-    game.physics.startSystem(Phaser.Physics.ARCADE);
+    game.physics.startSystem(Phaser.Physics.P2JS);
 
     player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
-    game.physics.enable(player);
+    game.physics.p2.enable(player);
+    player.body.setZeroDamping();
+    player.body.fixedRotation = true;
 
     cursors = game.input.keyboard.createCursorKeys();
 
@@ -41,8 +43,7 @@ window.onload = function ()
   function update()
   {
     //Player stuff
-    player.body.velocity.x = 0;
-    player.body.velocity.y = 0;
+    player.body.setZeroVelocity();
     if (cursors.up.isDown)
     {
       player.body.velocity.y = -300;
@@ -63,9 +64,9 @@ window.onload = function ()
     {
       createItem();
     }
-    game.physics.arcade.overlap(player, heart, collectHeart, null, this);
-    game.physics.arcade.overlap(player, lung, collectLung, null, this);
-    game.physics.arcade.overlap(player, brain, collectBrain, null, this);
+    //game.physics.arcade.overlap(player, heart, collectHeart, null, this);
+    //game.physics.arcade.overlap(player, lung, collectLung, null, this);
+    //game.physics.arcade.overlap(player, brain, collectBrain, null, this);
  }
 
  function createItem()
@@ -75,25 +76,22 @@ window.onload = function ()
    if(randomItem == 0)
    {
      heart = game.add.sprite(game.world.randomX, game.world.randomY, 'heart');
-     game.physics.enable(heart);
-     heart.body.velocity.x = 0;
-     heart.body.velocity.y = 0;
+     game.physics.p2.enable(heart);
+     heart.body.setZeroVelocity();
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 1)
    {
      lung = game.add.sprite(game.world.randomX, game.world.randomY, 'lung');
-     game.physics.enable(lung);
-     lung.body.velocity.x = 0;
-     lung.body.velocity.y = 0;
+     game.physics.p2.enable(lung);
+     lung.body.setZeroVelocity();
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 2)
    {
      brain = game.add.sprite(game.world.randomX, game.world.randomY, 'brain');
-     game.physics.enable(brain);
-     brain.body.velocity.x = 0;
-     brain.body.velocity.y = 0;
+     game.physics.p2.enable(brain);
+     brain.body.setZeroVelocity();
      itemCounter = itemCounter + 1;
    }
  }
