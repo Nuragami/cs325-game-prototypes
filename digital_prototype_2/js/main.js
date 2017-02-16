@@ -126,7 +126,7 @@ window.onload = function ()
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
-   }
+   
  }
  function collectLung()
  {
@@ -134,7 +134,7 @@ window.onload = function ()
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
-   }
+
  }
  function collectBrain()
  {
@@ -142,7 +142,7 @@ window.onload = function ()
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
-   }
+
  }
 
 
