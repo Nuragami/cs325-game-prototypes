@@ -30,21 +30,24 @@ window.onload = function ()
 
   function update()
   {
-    if(game.input.keyboard.isDown(Phaser.Keyboard.A))
-    {
-      player.x -= 5;
-    }
-    if(game.input.keyboard.isDown(Phaser.Keyboard.D))
-    {
-      player.x += 5;
-    }
-    if(game.input.keyboard.isDown(Phaser.Keyboard.W))
-    {
-      player.y -= 5;
-    }
-    if(game.input.keyboard.isDown(Phaser.Keyboard.S))
-    {
-      player.y += 5;
-    }
+    player.body.setZeroVelocity();
+
+     if (cursors.up.isDown)
+     {
+         player.body.velocity.y = 100
+     }
+     else if (cursors.down.isDown)
+     {
+         player.body.velocity.y = -100
+     }
+
+     if (cursors.left.isDown)
+     {
+         player.body.velocity.x = -100;
+     }
+     else if (cursors.right.isDown)
+     {
+         player.body.velocity.x = 100;
+     }
   }
 };
