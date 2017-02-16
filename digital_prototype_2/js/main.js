@@ -44,10 +44,13 @@ window.onload = function ()
 
     game.camera.follow(player);
 
-    createItem();
-    player.body.createBodyCallback(player, collectHeart, this);
-    player.body.createBodyCallback(player, collectLung, this);
-    player.body.createBodyCallback(player, collectBrain, this);
+    heart = game.add.sprite(game.world.randomX, game.world.randomY, 'heart');
+    lung = game.add.sprite(game.world.randomX, game.world.randomY, 'lung');
+    brain = game.add.sprite(game.world.randomX, game.world.randomY, 'brain');
+
+    player.body.createBodyCallback(heart, collectHeart, this);
+    player.body.createBodyCallback(lung, collectLung, this);
+    player.body.createBodyCallback(brain, collectBrain, this);
 
     game.physics.p2.setImpactEvents(true);
 
