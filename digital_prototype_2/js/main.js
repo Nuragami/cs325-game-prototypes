@@ -38,6 +38,8 @@ window.onload = function ()
     cursors = game.input.keyboard.createCursorKeys();
 
     game.camera.follow(player);
+
+    player.body.onBeginContact.add(collectItem, this);
   }
 
   function update()
@@ -103,17 +105,20 @@ window.onload = function ()
   return Math.floor(Math.random() * (max - min + 1)) + min;
  }
 
- function collectHeart(player, heart)
+ function colletItem(heart, lung, brain)
  {
+   if(heart)
+   {
      heart.kill();
- }
- function collectLung(player, lung)
- {
-    lung.kill();
- }
- function collectBrain(player, brain)
- {
-    brain.kill();
+   }
+   if(lung)
+   {
+     lung.kill();
+   }
+   if(brain)
+   {
+     brain.kill();
+   }
  }
 
 
