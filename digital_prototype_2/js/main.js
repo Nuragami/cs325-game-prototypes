@@ -101,11 +101,12 @@ window.onload = function ()
         break;
       }
     }
+    spawnCounter = 0;
     if(playerHealth <= 0)
     {
       player.sprite.kill();
     }
-    if(scoreCounter >= 10 && scoreCounter < 20)
+    if(scoreCounter == 10)
     {
       spawnCounter = 1;
       if(spawnCounter == 1)
@@ -114,7 +115,7 @@ window.onload = function ()
         spawnCounter = 0;
       }
     }
-    if(scoreCounter >= 20 && scoreCounter < 30)
+    if(scoreCounter == 20)
     {
       spawnCounter = 1;
       if(spawnCounter == 1)
@@ -123,7 +124,7 @@ window.onload = function ()
         spawnCounter = 0;
       }
     }
-    if(scoreCounter >= 30 && scoreCounter < 40)
+    if(scoreCounter == 30)
     {
       spawnCounter = 1;
       if(spawnCounter == 1)
@@ -132,7 +133,7 @@ window.onload = function ()
         spawnCounter = 0;
       }
     }
-    if(scoreCounter >= 40 && scoreCounter < 100)
+    if(scoreCounter == 40)
     {
       spawnCounter = 1;
       if(spawnCounter == 1)
