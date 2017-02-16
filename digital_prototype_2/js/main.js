@@ -34,7 +34,6 @@ window.onload = function ()
     cursors = game.input.keyboard.createCursorKeys();
 
     game.camera.follow(player);
-    print("here");
     game.time.events.repeat(Phaser.Time.SECOND * 2, 10, createItem, this);
   }
 
@@ -58,13 +57,13 @@ window.onload = function ()
     {
       player.body.velocity.x = 300;
     }
+    createItem();
  }
 
  function createItem()
  {
    var randomItem;
    randomItem = getRandomInt(-1, 3);
-   print(randomItem);
    if(randomItem == 0)
    {
      heart = game.add.sprite(game.world.randomX, game.world.randomY, 'heart');
@@ -83,10 +82,10 @@ window.onload = function ()
  }
 
  function getRandomInt(min, max)
-  {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
+ {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+ }
 
 };
