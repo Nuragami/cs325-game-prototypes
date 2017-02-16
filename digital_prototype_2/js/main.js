@@ -105,7 +105,7 @@ window.onload = function ()
       player.sprite.kill();
 
     }
-    zombie.forEachAlive(moveZombie, this);
+    zombie.(moveZombie, this);
  }
 
  function createOrgan()
@@ -166,8 +166,7 @@ window.onload = function ()
    zombie.body.setRectangle(100,100,0,0)
    zombie.body.setZeroVelocity();
    zombie.body.fixedRotation = true;
-   zombie.forEachAlive(moveZombie, this);
-
+   zombie.moveZombie(this);
    player.body.createBodyCallback(zombie, playerDamage, this);
 
  }
@@ -184,7 +183,7 @@ window.onload = function ()
    {
      speed = 60;
    }
-    var angle = Math.atan2(obj2.y - obj1.y, obj2.x - obj1.x);
+    var angle = Math.atan2(object2.y - object1.y, object2.x - object1.x);
     object1.body.rotation = angle + game.math.degToRad(90);
     object1.body.force.x = Math.cos(angle) * speed;
     object1.body.force.y = Math.sin(angle) * speed;
