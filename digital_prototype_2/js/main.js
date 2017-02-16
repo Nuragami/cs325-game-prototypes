@@ -48,8 +48,8 @@ window.onload = function ()
     lung = game.add.sprite(game.world.randomX, game.world.randomY, 'lung');
     brain = game.add.sprite(game.world.randomX, game.world.randomY, 'brain');
 
-    player.body.createBodyCallback(heart, collectHeart, this);
-    player.body.createBodyCallback(lung, collectLung, this);
+    //player.body.createBodyCallback(heart, collectHeart, this);
+    //player.body.createBodyCallback(lung, collectLung, this);
     player.body.createBodyCallback(brain, collectBrain, this);
 
     game.physics.p2.setImpactEvents(true);
@@ -99,6 +99,7 @@ window.onload = function ()
      game.physics.p2.enable(heart);
      heart.body.setRectangle(50,50,0,0)
      heart.body.setZeroVelocity();
+     player.body.createBodyCallback(heart, collectHeart, this);
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 1)
@@ -107,6 +108,7 @@ window.onload = function ()
      game.physics.p2.enable(lung);
      lung.body.setRectangle(50,50,0,0)
      lung.body.setZeroVelocity();
+     player.body.createBodyCallback(lung, collectLung, this);
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 2)
@@ -115,6 +117,7 @@ window.onload = function ()
      game.physics.p2.enable(brain);
      brain.body.setRectangle(50,50,0,0)
      brain.body.setZeroVelocity();
+     player.body.createBodyCallback(brain, collectBrain, this);
      itemCounter = itemCounter + 1;
    }
  }
