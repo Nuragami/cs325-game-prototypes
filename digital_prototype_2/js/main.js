@@ -119,21 +119,21 @@ window.onload = function ()
  {
    if(heart)
    {
-    heart.kill();
+    this.heart.kill();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
    }
    if(lung)
    {
-     lung.kill();
+     this.lung.kill();
      itemCounter = itemCounter - 1;
      scoreCounter = scoreCounter + 1;
      text.setText("You collected " + scoreCounter + " organs!");
    }
    if(brain)
    {
-     brain.kill();
+     this.brain.kill();
      itemCounter = itemCounter - 1;
      scoreCounter = scoreCounter + 1;
      text.setText("You collected " + scoreCounter + " organs!");
