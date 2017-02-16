@@ -48,6 +48,7 @@ window.onload = function ()
     {
       createItem();
     }
+
     player.body.createBodyCallback(heart, collectHeart, this);
     player.body.createBodyCallback(lung, collectlung, this);
     player.body.createBodyCallback(brain, collectBrain, this);
@@ -138,21 +139,21 @@ window.onload = function ()
  }
  function collectHeart(body1, body2)
  {
-    body2.destroy();
+    body2.sprite.destroy();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
  }
  function collectLung(body1, body2)
  {
-    body2.destroy();
+    body2.sprite.destroy();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
  }
  function collectBrain(body1, body2)
  {
-    body2.destroy();
+    body2.sprite.destroy();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
