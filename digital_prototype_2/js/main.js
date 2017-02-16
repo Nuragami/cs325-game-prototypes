@@ -34,7 +34,7 @@ window.onload = function ()
     cursors = game.input.keyboard.createCursorKeys();
 
     game.camera.follow(player);
-
+    print("here");
     game.time.events.repeat(Phaser.Time.SECOND * 2, 10, createItem, this);
   }
 
