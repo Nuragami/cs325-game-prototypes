@@ -102,46 +102,46 @@ window.onload = function ()
       }
     }
     spawnCounter = 0;
-    if(playerHealth <= 0)
-    {
-      player.sprite.kill();
-    }
-    if(scoreCounter == 10)
-    {
-      spawnCounter = 1;
-      if(spawnCounter == 1)
-      {
-        createEnemy();
-        spawnCounter = 0;
-      }
-    }
-    if(scoreCounter == 20)
-    {
-      spawnCounter = 1;
-      if(spawnCounter == 1)
-      {
-        createEnemy();
-        spawnCounter = 0;
-      }
-    }
-    if(scoreCounter == 30)
-    {
-      spawnCounter = 1;
-      if(spawnCounter == 1)
-      {
-        createEnemy();
-        spawnCounter = 0;
-      }
-    }
-    if(scoreCounter == 40)
-    {
-      spawnCounter = 1;
-      if(spawnCounter == 1)
-      {
-        createEnemy();
-        spawnCounter = 0;
-      }
-    }
+    // if(playerHealth <= 0)
+    // {
+    //   player.sprite.kill();
+    // }
+    // if(scoreCounter == 10)
+    // {
+    //   spawnCounter = 1;
+    //   if(spawnCounter == 1)
+    //   {
+    //     createEnemy();
+    //     spawnCounter = 0;
+    //   }
+    // }
+    // if(scoreCounter == 20)
+    // {
+    //   spawnCounter = 1;
+    //   if(spawnCounter == 1)
+    //   {
+    //     createEnemy();
+    //     spawnCounter = 0;
+    //   }
+    // }
+    // if(scoreCounter == 30)
+    // {
+    //   spawnCounter = 1;
+    //   if(spawnCounter == 1)
+    //   {
+    //     createEnemy();
+    //     spawnCounter = 0;
+    //   }
+    // }
+    // if(scoreCounter == 40)
+    // {
+    //   spawnCounter = 1;
+    //   if(spawnCounter == 1)
+    //   {
+    //     createEnemy();
+    //     spawnCounter = 0;
+    //   }
+    // }
 
     accelerateToObject(zombie, player, 30);
  }
