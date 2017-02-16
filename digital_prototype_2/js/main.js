@@ -13,6 +13,8 @@ window.onload = function ()
   var lung;
   var brain;
 
+  var itemCounter = 0;
+
   function preload()
   {
     game.load.image('background', "assets/background.png");
@@ -33,8 +35,7 @@ window.onload = function ()
 
     cursors = game.input.keyboard.createCursorKeys();
 
-    game.camera.follow(player);
-    game.time.events.repeat(Phaser.Time.SECOND * 2, 10, createItem, this);
+    game.camera.follow(player);    
   }
 
   function update()
@@ -57,7 +58,11 @@ window.onload = function ()
     {
       player.body.velocity.x = 300;
     }
-    createItem();
+    if(itemCounter < 10)
+    {
+      createItem();
+    }
+
  }
 
  function createItem()
@@ -68,16 +73,19 @@ window.onload = function ()
    {
      heart = game.add.sprite(game.world.randomX, game.world.randomY, 'heart');
      game.physics.p2.enable(heart);
+     itemCounter = itemCounter + 1;
    }
    if(randomItem == 1)
    {
      lung = game.add.sprite(game.world.randomX, game.world.randomY, 'lung');
      game.physics.p2.enable(lung);
+     itemCounter = itemCounter + 1;
    }
    if(randomItem == 2)
    {
      brain = game.add.sprite(game.world.randomX, game.world.randomY, 'brain');
      game.physics.p2.enable(brain);
+     itemCounter = itemCounter + 1;
    }
  }
 
