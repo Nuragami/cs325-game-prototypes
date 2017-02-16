@@ -35,6 +35,7 @@ window.onload = function ()
 
     player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
     game.physics.p2.enable(player);
+    player.body.setRectangle(75,100,0,0);
     player.body.setZeroDamping();
     player.body.fixedRotation = true;
 
@@ -90,24 +91,24 @@ window.onload = function ()
    {
      heart = game.add.sprite(game.world.randomX, game.world.randomY, 'heart');
      game.physics.p2.enable(heart);
+     heart.body.setRectangle(50,50,0,0)
      heart.body.setZeroVelocity();
-     heart.inputEnabled = true;
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 1)
    {
      lung = game.add.sprite(game.world.randomX, game.world.randomY, 'lung');
      game.physics.p2.enable(lung);
+     lung.body.setRectangle(50,50,0,0)
      lung.body.setZeroVelocity();
-     lung.inputEnabled = true;
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 2)
    {
      brain = game.add.sprite(game.world.randomX, game.world.randomY, 'brain');
      game.physics.p2.enable(brain);
+     brain.body.setRectangle(50,50,0,0)
      brain.body.setZeroVelocity();
-     brain.inputEnabled = true;
      itemCounter = itemCounter + 1;
    }
  }
