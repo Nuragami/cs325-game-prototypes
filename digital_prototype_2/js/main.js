@@ -64,6 +64,7 @@ window.onload = function ()
  {
    var randomItem;
    randomItem = getRandomInt(-1, 3);
+   print(randomItem);
    if(randomItem == 0)
    {
      heart = game.add.sprite(game.world.randomX, game.world.randomY, 'heart');
