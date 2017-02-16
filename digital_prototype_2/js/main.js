@@ -19,6 +19,7 @@ window.onload = function ()
   var scoreCounter = 0;
   var zombieCounter = 0;
   var playerHealth = 5;
+  var spawnCounter = 0;
 
   var text;
   var playerText;
@@ -103,7 +104,42 @@ window.onload = function ()
     if(playerHealth <= 0)
     {
       player.sprite.kill();
-
+    }
+    if(itemCounter >= 10 && itemCounter < 20)
+    {
+      spawnCounter = 5;
+      while(spawnCounter >= 0)
+      {
+        createEnemy();
+        spawnCounter = spawnCounter - 1;
+      }
+    }
+    if(itemCounter >= 20 && itemCounter < 30)
+    {
+      spawnCounter = 10;
+      while(spawnCounter >= 0)
+      {
+        createEnemy();
+        spawnCounter = spawnCounter - 1;
+      }
+    }
+    if(itemCounter >= 30 && itemCounter < 50)
+    {
+      spawnCounter = 15;
+      while(spawnCounter >= 0)
+      {
+        createEnemy();
+        spawnCounter = spawnCounter - 1;
+      }
+    }
+    if(itemCounter >= 50 && itemCounter < 100)
+    {
+      spawnCounter = 20;
+      while(spawnCounter >= 0)
+      {
+        createEnemy();
+        spawnCounter = spawnCounter - 1;
+      }
     }
     accelerateToObject(zombie, player, 30);
  }
