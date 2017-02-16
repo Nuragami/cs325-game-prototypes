@@ -45,7 +45,7 @@ window.onload = function ()
     player.body.fixedRotation = true;
 
     createEnemy();
-    
+
     cursors = game.input.keyboard.createCursorKeys();
 
     game.camera.follow(player);
@@ -145,8 +145,8 @@ window.onload = function ()
  {
    zombie = game.add.sprite(game.world.randomX, game.world.randomY, 'zombie');
    game.physics.p2.enable(zombie);
-   heart.body.setRectangle(100,100,0,0)
-   heart.body.setZeroVelocity();
+   zombie.body.setRectangle(100,100,0,0)
+   zombie.body.setZeroVelocity();
  }
 
 
