@@ -53,6 +53,8 @@ window.onload = function ()
       align: "center"
     });
     text.anchor.setTo(0.5, 0.5);
+    text.fixedToCamera = true;
+
   }
 
   function update()
