@@ -32,6 +32,7 @@ window.onload = function ()
     background = game.add.tileSprite(0, 0, 1600, 600, 'background');
     game.world.setBounds(0, 0, 1600, 600);
     game.physics.startSystem(Phaser.Physics.P2JS);
+    game.physics.p2.restitution = 0.9;
 
     player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
     game.physics.p2.enable(player);
