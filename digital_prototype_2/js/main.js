@@ -44,10 +44,11 @@ window.onload = function ()
 
     game.camera.follow(player);
 
-    game.physics.p2.setImpactEvents(true);
     player.body.createBodyCallback(heart, collectHeart, this);
     player.body.createBodyCallback(lung, collectlung, this);
     player.body.createBodyCallback(brain, collectBrain, this);
+
+    game.physics.p2.setImpactEvents(true);
 
 
     text = game.add.text(game.world.centerX-650, game.world.centerY-250, "You collected 0 organs!",{
