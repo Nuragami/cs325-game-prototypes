@@ -105,16 +105,41 @@ window.onload = function ()
     {
       player.sprite.kill();
     }
-
-    while(scoreCounter > 10 && scoreCounter < 20)
+    if(scoreCounter >= 10 && scoreCounter < 20)
     {
-      createEnemy();
-      break;
+      spawnCounter = 5;
+      while(spawnCounter >= 0)
+      {
+        createEnemy();
+        spawnCounter = spawnCounter - 1;
+      }
     }
-    while(scoreCounter > 20 && scoreCounter < 30)
+    if(scoreCounter >= 20 && scoreCounter < 30)
     {
-      createEnemy();
-      break;
+      spawnCounter = 10;
+      while(spawnCounter >= 0)
+      {
+        createEnemy();
+        spawnCounter = spawnCounter - 1;
+      }
+    }
+    if(scoreCounter >= 30 && scoreCounter < 50)
+    {
+      spawnCounter = 15;
+      while(spawnCounter >= 0)
+      {
+        createEnemy();
+        spawnCounter = spawnCounter - 1;
+      }
+    }
+    if(scoreCounter >= 50 && scoreCounter < 100)
+    {
+      spawnCounter = 20;
+      while(spawnCounter >= 0)
+      {
+        createEnemy();
+        spawnCounter = spawnCounter - 1;
+      }
     }
     accelerateToObject(zombie, player, 30);
  }
@@ -179,7 +204,7 @@ window.onload = function ()
    zombie.body.fixedRotation = true;
    accelerateToObject(zombie, player, 30);
    player.body.createBodyCallback(zombie, playerDamage, this);
-
+   spawnCounter = 1;
  }
 
  function playerDamage(body1, body2)
