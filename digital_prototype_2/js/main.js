@@ -35,7 +35,7 @@ window.onload = function ()
 
     cursors = game.input.keyboard.createCursorKeys();
 
-    game.camera.follow(player);    
+    game.camera.follow(player);
   }
 
   function update()
@@ -62,7 +62,7 @@ window.onload = function ()
     {
       createItem();
     }
-
+    game.physics.arcade.overlap(player, [heart, lung, brain], itemCollection, null, this);
  }
 
  function createItem()
@@ -72,19 +72,19 @@ window.onload = function ()
    if(randomItem == 0)
    {
      heart = game.add.sprite(game.world.randomX, game.world.randomY, 'heart');
-     game.physics.p2.enable(heart);
+     //game.physics.p2.enable(heart);
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 1)
    {
      lung = game.add.sprite(game.world.randomX, game.world.randomY, 'lung');
-     game.physics.p2.enable(lung);
+     //game.physics.p2.enable(lung);
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 2)
    {
      brain = game.add.sprite(game.world.randomX, game.world.randomY, 'brain');
-     game.physics.p2.enable(brain);
+     //game.physics.p2.enable(brain);
      itemCounter = itemCounter + 1;
    }
  }
@@ -94,6 +94,11 @@ window.onload = function ()
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
+ }
+
+ function itemCollection(player, [heart, lung, brain])
+ {
+     [heart, lung, brain].kill();
  }
 
 };
