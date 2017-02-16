@@ -44,14 +44,10 @@ window.onload = function ()
 
     game.camera.follow(player);
 
-    if(itemCounter < 3)
-    {
-      createItem();
-    }
 
-    player.body.createBodyCallback(heart, collectHeart, this);
-    player.body.createBodyCallback(lung, collectLung, this);
-    player.body.createBodyCallback(brain, collectBrain, this);
+    //player.body.createBodyCallback(heart, collectHeart, this);
+    //player.body.createBodyCallback(lung, collectLung, this);
+    //player.body.createBodyCallback(brain, collectBrain, this);
 
     game.physics.p2.setImpactEvents(true);
 
@@ -88,6 +84,10 @@ window.onload = function ()
     {
       createItem();
     }
+    player.body.createBodyCallback(heart, collectHeart, this);
+    player.body.createBodyCallback(lung, collectLung, this);
+    player.body.createBodyCallback(brain, collectBrain, this);
+
  }
 
  function createItem()
@@ -139,21 +139,21 @@ window.onload = function ()
  }
  function collectHeart(body1, body2)
  {
-    body2.sprite.kill();
+    body2.sprite.destory();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
  }
  function collectLung(body1, body2)
  {
-    body2.sprite.kill();
+    body2.sprite.destroy();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
  }
  function collectBrain(body1, body2)
  {
-    body2.sprite.kill();
+    body2.sprite.destroy();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
