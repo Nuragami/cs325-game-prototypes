@@ -166,7 +166,7 @@ window.onload = function ()
    zombie.body.setRectangle(100,100,0,0)
    zombie.body.setZeroVelocity();
    zombie.body.fixedRotation = true;
-   zombie.body.accelerateToObject(this, player, 30);
+   accelerateToObject(zombie, player, 30);
    player.body.createBodyCallback(zombie, playerDamage, this);
 
  }
