@@ -50,7 +50,7 @@ window.onload = function ()
     }
 
     player.body.createBodyCallback(heart, collectHeart, this);
-    player.body.createBodyCallback(lung, collectlung, this);
+    player.body.createBodyCallback(lung, collectLung, this);
     player.body.createBodyCallback(brain, collectBrain, this);
 
     game.physics.p2.setImpactEvents(true);
