@@ -204,7 +204,7 @@ window.onload = function ()
    zombie.body.fixedRotation = true;
    accelerateToObject(zombie, player, 30);
    player.body.createBodyCallback(zombie, playerDamage, this);
-   spawnCounter = 1;
+   spawnCounter = 0;
  }
 
  function playerDamage(body1, body2)
