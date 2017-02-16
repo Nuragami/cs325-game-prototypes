@@ -72,19 +72,19 @@ window.onload = function ()
    if(randomItem == 0)
    {
      heart = game.add.sprite(game.world.randomX, game.world.randomY, 'heart');
-     //game.physics.p2.enable(heart);
+     game.physics.p2.enable(heart);
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 1)
    {
      lung = game.add.sprite(game.world.randomX, game.world.randomY, 'lung');
-     //game.physics.p2.enable(lung);
+     game.physics.p2.enable(lung);
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 2)
    {
      brain = game.add.sprite(game.world.randomX, game.world.randomY, 'brain');
-     //game.physics.p2.enable(brain);
+     game.physics.p2.enable(brain);
      itemCounter = itemCounter + 1;
    }
  }
