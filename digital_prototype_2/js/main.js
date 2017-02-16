@@ -105,7 +105,7 @@ window.onload = function ()
       player.sprite.kill();
 
     }
-    zombie.moveZombie(this);
+    zombie.body.accelerateToObject(zombie, player, 30);
  }
 
  function createOrgan()
@@ -166,7 +166,7 @@ window.onload = function ()
    zombie.body.setRectangle(100,100,0,0)
    zombie.body.setZeroVelocity();
    zombie.body.fixedRotation = true;
-   zombie.moveZombie(this);
+   zombie.body.accelerateToObject(this, player, 30);
    player.body.createBodyCallback(zombie, playerDamage, this);
 
  }
@@ -189,10 +189,6 @@ window.onload = function ()
     object1.body.force.y = Math.sin(angle) * speed;
  }
 
-function moveZombie(zombie)
-{
-  accelerateToObject(zombie, player, 30);
-}
 
 
 
