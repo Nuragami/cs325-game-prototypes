@@ -21,6 +21,7 @@ window.onload = function ()
   var playerHealth = 5;
 
   var text;
+  var playerText;
 
   function preload()
   {
@@ -59,8 +60,15 @@ window.onload = function ()
       fill: "#ff0044",
       align: "center"
     });
+    playerText = game.add.text(game.world.centerX-650, game.world.centerY-200, "You have 5 lives left!",{
+      font: "20px Arial",
+      fill: "#ff0044",
+      align: "center"
+    });
     text.anchor.setTo(0.5, 0.5);
     text.fixedToCamera = true;
+    playerText.anchor.setTo(0.5, 0.5);
+    playerText.fixedToCamera = true;
 
   }
 
@@ -91,6 +99,11 @@ window.onload = function ()
       {
         break;
       }
+    }
+    if(playerHealth <= 0)
+    {
+      player.sprite.kill();
+
     }
  }
 
@@ -157,9 +170,8 @@ window.onload = function ()
 
  function playerDamage(body1, body2)
  {
-   body1.sprite.kill();
    playerHealth = playerHealth - 1;
-
+   playerText.setText("You have " + playerHealth + " lives left!")
  }
 
 
