@@ -165,7 +165,10 @@ window.onload = function ()
    zombie.body.setRectangle(100,100,0,0)
    zombie.body.setZeroVelocity();
    zombie.body.fixedRotation = true;
+   zombie(moveZombie, this);
+
    player.body.createBodyCallback(zombie, playerDamage, this);
+
  }
 
  function playerDamage(body1, body2)
@@ -173,6 +176,23 @@ window.onload = function ()
    playerHealth = playerHealth - 1;
    playerText.setText("You have " + playerHealth + " lives left!")
  }
+
+ function accelerateToObject(object1, object2, speed)
+ {
+   if (typeof speed === 'undefined')
+   {
+     speed = 60;
+   }
+    var angle = Math.atan2(obj2.y - obj1.y, obj2.x - obj1.x);
+    object1.body.rotation = angle + game.math.degToRad(90);
+    object1.body.force.x = Math.cos(angle) * speed;
+    object1.body.force.y = Math.sin(angle) * speed;
+ }
+
+function moveZombie(zombie)
+{
+  accelerateToObject(zombie, player, 30);
+}
 
 
 
