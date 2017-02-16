@@ -107,40 +107,41 @@ window.onload = function ()
     }
     if(scoreCounter >= 10 && scoreCounter < 20)
     {
-      spawnCounter = 5;
-      while(spawnCounter >= 0)
+      spawnCounter = 1;
+      if(spawnCounter == 1)
       {
         createEnemy();
-        spawnCounter = spawnCounter - 1;
+        spawnCounter = 0;
       }
     }
     if(scoreCounter >= 20 && scoreCounter < 30)
     {
-      spawnCounter = 10;
-      while(spawnCounter >= 0)
+      spawnCounter = 1;
+      if(spawnCounter == 1)
       {
         createEnemy();
-        spawnCounter = spawnCounter - 1;
+        spawnCounter = 0;
       }
     }
-    if(scoreCounter >= 30 && scoreCounter < 50)
+    if(scoreCounter >= 30 && scoreCounter < 40)
     {
-      spawnCounter = 15;
-      while(spawnCounter >= 0)
+      spawnCounter = 1;
+      if(spawnCounter == 1)
       {
         createEnemy();
-        spawnCounter = spawnCounter - 1;
+        spawnCounter = 0;
       }
     }
-    if(scoreCounter >= 50 && scoreCounter < 100)
+    if(scoreCounter >= 40 && scoreCounter < 100)
     {
-      spawnCounter = 20;
-      while(spawnCounter >= 0)
+      spawnCounter = 1;
+      if(spawnCounter == 1)
       {
         createEnemy();
-        spawnCounter = spawnCounter - 1;
+        spawnCounter = 0;
       }
     }
+
     accelerateToObject(zombie, player, 30);
  }
 
