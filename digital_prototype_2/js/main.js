@@ -42,7 +42,11 @@ window.onload = function ()
 
     game.camera.follow(player);
 
-    player.body.onBeginContact.add(collectOrgan, this);
+    game.physics.p2.setImpactEvents(true);
+    player.body.createBodyCallback(heart, collectHeart, this);
+    player.body.createBodyCallback(lung, collectlung, this);
+    player.body.createBodyCallback(brain, collectBrain, this);
+
 
     text = game.add.text(game.world.centerX-650, game.world.centerY-250, "You collected 0 organs!",{
       font: "20px Arial",
@@ -119,13 +123,33 @@ window.onload = function ()
  {
    if(body)
    {
-     body.sprite.key.destroy();
+
      itemCounter = itemCounter - 1;
      scoreCounter = scoreCounter + 1;
      text.setText("You collected " + scoreCounter + " organs!");
    }
  }
-
+ function collectHeart(body1, body2)
+ {
+    body2.destroy();
+    itemCounter = itemCounter - 1;
+    scoreCounter = scoreCounter + 1;
+    text.setText("You collected " + scoreCounter + " organs!");
+ }
+ function collectLung(body1, body2)
+ {
+    body2.destroy();
+    itemCounter = itemCounter - 1;
+    scoreCounter = scoreCounter + 1;
+    text.setText("You collected " + scoreCounter + " organs!");
+ }
+ function collectBrain(body1, body2)
+ {
+    body2.destroy();
+    itemCounter = itemCounter - 1;
+    scoreCounter = scoreCounter + 1;
+    text.setText("You collected " + scoreCounter + " organs!");
+ }
 
 
 
