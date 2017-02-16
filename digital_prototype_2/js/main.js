@@ -133,7 +133,7 @@ window.onload = function ()
  }
  function collectHeart(body1, body2)
  {
-    body2.sprite.destory();
+    body2.sprite.destroy();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
