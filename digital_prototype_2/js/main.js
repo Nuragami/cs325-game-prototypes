@@ -44,10 +44,10 @@ window.onload = function ()
 
     game.camera.follow(player);
 
-
-    //player.body.createBodyCallback(heart, collectHeart, this);
-    //player.body.createBodyCallback(lung, collectLung, this);
-    //player.body.createBodyCallback(brain, collectBrain, this);
+    createItem();
+    player.body.createBodyCallback(heart, collectHeart, this);
+    player.body.createBodyCallback(lung, collectLung, this);
+    player.body.createBodyCallback(brain, collectBrain, this);
 
     game.physics.p2.setImpactEvents(true);
 
@@ -84,10 +84,6 @@ window.onload = function ()
     {
       createItem();
     }
-    player.body.createBodyCallback(heart, collectHeart, this);
-    player.body.createBodyCallback(lung, collectLung, this);
-    player.body.createBodyCallback(brain, collectBrain, this);
-
  }
 
  function createItem()
