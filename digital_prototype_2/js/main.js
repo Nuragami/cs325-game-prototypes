@@ -105,7 +105,7 @@ window.onload = function ()
       player.sprite.kill();
 
     }
-    zombie.(moveZombie, this);
+    zombie.moveZombie(this);
  }
 
  function createOrgan()
