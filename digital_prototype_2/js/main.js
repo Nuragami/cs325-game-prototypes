@@ -143,7 +143,7 @@ window.onload = function ()
     //   }
     // }
 
-    accelerateToObject(zombie, player, 30);
+    accelerateToObject(zombie, player, 250);
  }
 
  function createOrgan()
