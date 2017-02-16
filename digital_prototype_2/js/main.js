@@ -28,10 +28,10 @@ window.onload = function ()
   {
     background = game.add.tileSprite(0, 0, 1600, 600, 'background');
     game.world.setBounds(0, 0, 1600, 600);
-    game.physics.startSystem(Phaser.Physics.P2JS);
+    game.physics.startSystem(Phaser.Physics.ARCADE);
 
     player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
-    game.physics.p2.enable(player);
+    game.physics.enable(player);
 
     cursors = game.input.keyboard.createCursorKeys();
 
@@ -58,7 +58,7 @@ window.onload = function ()
     {
       player.body.velocity.x = 300;
     }
-    if(itemCounter < 10)
+    if(itemCounter < 3)
     {
       createItem();
     }
@@ -72,19 +72,25 @@ window.onload = function ()
    if(randomItem == 0)
    {
      heart = game.add.sprite(game.world.randomX, game.world.randomY, 'heart');
-     game.physics.p2.enable(heart);
+     game.physics.enable(heart);
+     heart.body.velocity.x = 0;
+     heart.body.velocity.y = 0;
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 1)
    {
      lung = game.add.sprite(game.world.randomX, game.world.randomY, 'lung');
-     game.physics.p2.enable(lung);
+     game.physics.enable(lung);
+     lung.body.velocity.x = 0;
+     lung.body.velocity.y = 0;
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 2)
    {
      brain = game.add.sprite(game.world.randomX, game.world.randomY, 'brain');
-     game.physics.p2.enable(brain);
+     game.physics.enable(brain);
+     brain.body.velocity.x = 0;
+     brain.body.velocity.y = 0;
      itemCounter = itemCounter + 1;
    }
  }
