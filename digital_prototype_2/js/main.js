@@ -105,41 +105,16 @@ window.onload = function ()
     {
       player.sprite.kill();
     }
-    if(scoreCounter >= 10 && scoreCounter < 20)
+
+    while(scoreCounter > 10 && scoreCounter < 20)
     {
-      spawnCounter = 0.5;
-      while(spawnCounter >= 0)
-      {
-        createEnemy();
-        spawnCounter = spawnCounter - 1;
-      }
+      createEnemy();
+      break;
     }
-    if(scoreCounter >= 20 && scoreCounter < 30)
+    while(scoreCounter > 20 && scoreCounter < 30)
     {
-      spawnCounter = 0.5;
-      while(spawnCounter >= 0)
-      {
-        createEnemy();
-        spawnCounter = spawnCounter - 1;
-      }
-    }
-    if(scoreCounter >= 30 && scoreCounter < 50)
-    {
-      spawnCounter = 0.5;
-      while(spawnCounter >= 0.5)
-      {
-        createEnemy();
-        spawnCounter = spawnCounter - 1;
-      }
-    }
-    if(scoreCounter >= 50 && scoreCounter < 100)
-    {
-      spawnCounter = 1;
-      while(spawnCounter >= 0.5)
-      {
-        createEnemy();
-        spawnCounter = spawnCounter - 1;
-      }
+      createEnemy();
+      break;
     }
     accelerateToObject(zombie, player, 30);
  }
