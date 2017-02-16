@@ -35,19 +35,19 @@ window.onload = function ()
 
     if (cursors.up.isDown)
     {
-      player.body.velocity.y = -100
+      player.body.velocity.y = -300
     }
     else if (cursors.down.isDown)
     {
-      player.body.velocity.y = 100
+      player.body.velocity.y = 300
     }
     if (cursors.left.isDown)
     {
-      player.body.velocity.x = -100;
+      player.body.velocity.x = -300;
     }
     else if (cursors.right.isDown)
     {
-      player.body.velocity.x = 100;
+      player.body.velocity.x = 300;
     }
  }
 };
