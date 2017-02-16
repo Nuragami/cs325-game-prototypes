@@ -16,31 +16,33 @@ window.onload = function ()
 
   function create()
   {
-    game.world.setBounds(-800, -300, 1600, 600);
     background = game.add.tileSprite(0, 0, 800, 600, 'background');
-    background.fixedToCamera = true;
+    game.world.setBounds(0, 0, 1600, 600);
+    game.physics.startSystem(Phaser.Physics.P2JS);
 
-    player = game.add.sprite(0, 0, 'player');
-    player.anchor.setTo(0.5, 0.5);
+    player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
+    game.physics.p2.enable(player);
 
-    game.physics.enable(player, Phaser.Physics.ARCADE);
+    cursors = game.input.keyboard.createCursorKeys();
+
+    game.camera.follow(player);
   }
 
   function update()
   {
-    if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
+    if(game.input.keyboard.isDown(Phaser.Keyboard.A))
     {
       player.x -= 5;
     }
-    if(game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
+    if(game.input.keyboard.isDown(Phaser.Keyboard.D))
     {
       player.x += 5;
     }
-    if(game.input.keyboard.isDown(Phaser.Keyboard.UP))
+    if(game.input.keyboard.isDown(Phaser.Keyboard.W))
     {
       player.y -= 5;
     }
-    if(game.input.keyboard.isDown(Phaser.Keyboard.DOWN))
+    if(game.input.keyboard.isDown(Phaser.Keyboard.S))
     {
       player.y += 5;
     }
