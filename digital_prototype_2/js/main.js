@@ -90,6 +90,7 @@ window.onload = function ()
      heart = game.add.sprite(game.world.randomX, game.world.randomY, 'heart');
      game.physics.p2.enable(heart);
      heart.body.setZeroVelocity();
+     heart.inputEnabled = true;
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 1)
@@ -97,6 +98,7 @@ window.onload = function ()
      lung = game.add.sprite(game.world.randomX, game.world.randomY, 'lung');
      game.physics.p2.enable(lung);
      lung.body.setZeroVelocity();
+     lung.inputEnabled = true;
      itemCounter = itemCounter + 1;
    }
    if(randomItem == 2)
@@ -104,6 +106,7 @@ window.onload = function ()
      brain = game.add.sprite(game.world.randomX, game.world.randomY, 'brain');
      game.physics.p2.enable(brain);
      brain.body.setZeroVelocity();
+     brain.inputEnabled = true;
      itemCounter = itemCounter + 1;
    }
  }
