@@ -105,6 +105,7 @@ window.onload = function ()
       player.sprite.kill();
 
     }
+    zombie.forEachAlive(moveZombie, this);
  }
 
  function createOrgan()
@@ -165,7 +166,7 @@ window.onload = function ()
    zombie.body.setRectangle(100,100,0,0)
    zombie.body.setZeroVelocity();
    zombie.body.fixedRotation = true;
-   zombie(moveZombie, this);
+   zombie.forEachAlive(moveZombie, this);
 
    player.body.createBodyCallback(zombie, playerDamage, this);
 
