@@ -42,9 +42,7 @@ window.onload = function ()
 
     game.camera.follow(player);
 
-    player.body.onBeginContact.add(collectHeart, this);
-    player.body.onBeginContact.add(collectLung, this);
-    player.body.onBeginContact.add(collectBrain, this);
+    player.body.onBeginContact.add(collectItem, this);
 
     text = game.add.text(game.world.centerX-650, game.world.centerY-250, "You collected 0 organs!",{
       font: "20px Arial",
@@ -78,9 +76,6 @@ window.onload = function ()
     {
       createItem();
     }
-    //game.physics.arcade.overlap(player, heart, collectHeart, null, this);
-    //game.physics.arcade.overlap(player, lung, collectLung, null, this);
-    //game.physics.arcade.overlap(player, brain, collectBrain, null, this);
  }
 
  function createItem()
