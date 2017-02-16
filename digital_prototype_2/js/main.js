@@ -6,6 +6,7 @@ window.onload = function ()
 
   var background;
   var player;
+  var playerSpeed;
 
   function preload()
   {
@@ -15,7 +16,7 @@ window.onload = function ()
 
   function create()
   {
-    game.world.setBounds(0, 0, 1600, 600);
+    game.world.setBounds(-800, -300, 1600, 600);
     background = game.add.tileSprite(0, 0, 800, 600, 'background');
     background.fixedToCamera = true;
 
@@ -27,7 +28,21 @@ window.onload = function ()
 
   function update()
   {
-
-
+    if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
+    {
+      player.x -= 5;
+    }
+    if(game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
+    {
+      player.x += 5;
+    }
+    if(game.input.keyboard.isDown(Phaser.Keyboard.UP))
+    {
+      player.y -= 5;
+    }
+    if(game.input.keyboard.isDown(Phaser.Keyboard.DOWN))
+    {
+      player.y += 5;
+    }
   }
 };
