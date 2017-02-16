@@ -45,9 +45,9 @@ window.onload = function ()
     game.camera.follow(player);
 
     createItem();
-    player.body.createBodyCallback(heart, collectHeart, this);
-    player.body.createBodyCallback(lung, collectLung, this);
-    player.body.createBodyCallback(brain, collectBrain, this);
+    this.player.body.createBodyCallback(player, collectHeart, this);
+    this.player.body.createBodyCallback(lung, collectLung, this);
+    this.player.body.createBodyCallback(brain, collectBrain, this);
 
     game.physics.p2.setImpactEvents(true);
 
