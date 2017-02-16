@@ -35,8 +35,6 @@ window.onload = function ()
 
     game.camera.follow(player);
 
-    itemCounter = 0;
-
     game.time.events.repeat(Phaser.Time.SECOND * 2, 10, createItem, this);
   }
 
