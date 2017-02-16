@@ -107,7 +107,7 @@ window.onload = function ()
     }
     if(scoreCounter >= 10 && scoreCounter < 20)
     {
-      spawnCounter = 1;
+      spawnCounter = 0.5;
       while(spawnCounter >= 0)
       {
         createEnemy();
@@ -116,7 +116,7 @@ window.onload = function ()
     }
     if(scoreCounter >= 20 && scoreCounter < 30)
     {
-      spawnCounter = 1;
+      spawnCounter = 0.5;
       while(spawnCounter >= 0)
       {
         createEnemy();
@@ -125,8 +125,8 @@ window.onload = function ()
     }
     if(scoreCounter >= 30 && scoreCounter < 50)
     {
-      spawnCounter = 1;
-      while(spawnCounter >= 0)
+      spawnCounter = 0.5;
+      while(spawnCounter >= 0.5)
       {
         createEnemy();
         spawnCounter = spawnCounter - 1;
@@ -135,7 +135,7 @@ window.onload = function ()
     if(scoreCounter >= 50 && scoreCounter < 100)
     {
       spawnCounter = 1;
-      while(spawnCounter >= 0)
+      while(spawnCounter >= 0.5)
       {
         createEnemy();
         spawnCounter = spawnCounter - 1;
