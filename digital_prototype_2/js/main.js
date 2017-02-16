@@ -42,7 +42,9 @@ window.onload = function ()
 
     game.camera.follow(player);
 
-    player.body.onBeginContact.add(collectItem, this);
+    player.body.onBeginContact.add(collectHeart, this);
+    player.body.onBeginContact.add(collectLung, this);
+    player.body.onBeginContact.add(collectBrain, this);
 
     text = game.add.text(game.world.centerX-650, game.world.centerY-250, "You collected 0 organs!",{
       font: "20px Arial",
@@ -118,30 +120,32 @@ window.onload = function ()
   return Math.floor(Math.random() * (max - min + 1)) + min;
  }
 
- function collectItem(heart, lung, brain)
+ function collectHeart()
  {
-   if(heart)
-   {
     heart.destroy();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
    }
-   if(lung)
-   {
-     lung.destroy();
-     itemCounter = itemCounter - 1;
-     scoreCounter = scoreCounter + 1;
-     text.setText("You collected " + scoreCounter + " organs!");
-   }
-   if(brain)
-   {
-     brain.destroy();
-     itemCounter = itemCounter - 1;
-     scoreCounter = scoreCounter + 1;
-     text.setText("You collected " + scoreCounter + " organs!");
+ }
+ function collectLung()
+ {
+    lung.destroy();
+    itemCounter = itemCounter - 1;
+    scoreCounter = scoreCounter + 1;
+    text.setText("You collected " + scoreCounter + " organs!");
    }
  }
+ function collectBrain()
+ {
+    brain.destroy();
+    itemCounter = itemCounter - 1;
+    scoreCounter = scoreCounter + 1;
+    text.setText("You collected " + scoreCounter + " organs!");
+   }
+ }
+
+
 
 
 };
