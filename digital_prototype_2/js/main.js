@@ -35,11 +35,11 @@ window.onload = function ()
 
     if (cursors.up.isDown)
     {
-      player.body.velocity.y = 100
+      player.body.velocity.y = -100
     }
     else if (cursors.down.isDown)
     {
-      player.body.velocity.y = -100
+      player.body.velocity.y = 100
     }
     if (cursors.left.isDown)
     {
@@ -47,7 +47,7 @@ window.onload = function ()
     }
     else if (cursors.right.isDown)
     {
-      player.body.velocity.x = -100;
+      player.body.velocity.x = 100;
     }
  }
 };
