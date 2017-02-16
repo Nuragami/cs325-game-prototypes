@@ -42,7 +42,7 @@ window.onload = function ()
 
     game.camera.follow(player);
 
-    player.body.onBeginContact.add(collectItem, this);
+    player.body.onBeginContact.add(collectOrgan, this);
 
     text = game.add.text(game.world.centerX-650, game.world.centerY-250, "You collected 0 organs!",{
       font: "20px Arial",
