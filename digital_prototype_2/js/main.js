@@ -44,6 +44,10 @@ window.onload = function ()
 
     game.camera.follow(player);
 
+    if(itemCounter < 3)
+    {
+      createItem();
+    }
     player.body.createBodyCallback(heart, collectHeart, this);
     player.body.createBodyCallback(lung, collectlung, this);
     player.body.createBodyCallback(brain, collectBrain, this);
