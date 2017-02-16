@@ -105,7 +105,7 @@ window.onload = function ()
     {
       player.sprite.kill();
     }
-    if(itemCounter >= 10 && itemCounter < 20)
+    if(scoreCounter >= 10 && scoreCounter < 20)
     {
       spawnCounter = 5;
       while(spawnCounter >= 0)
@@ -114,7 +114,7 @@ window.onload = function ()
         spawnCounter = spawnCounter - 1;
       }
     }
-    if(itemCounter >= 20 && itemCounter < 30)
+    if(scoreCounter >= 20 && scoreCounter < 30)
     {
       spawnCounter = 10;
       while(spawnCounter >= 0)
@@ -123,7 +123,7 @@ window.onload = function ()
         spawnCounter = spawnCounter - 1;
       }
     }
-    if(itemCounter >= 30 && itemCounter < 50)
+    if(scoreCounter >= 30 && scoreCounter < 50)
     {
       spawnCounter = 15;
       while(spawnCounter >= 0)
@@ -132,7 +132,7 @@ window.onload = function ()
         spawnCounter = spawnCounter - 1;
       }
     }
-    if(itemCounter >= 50 && itemCounter < 100)
+    if(scoreCounter >= 50 && scoreCounter < 100)
     {
       spawnCounter = 20;
       while(spawnCounter >= 0)
