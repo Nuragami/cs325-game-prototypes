@@ -9,12 +9,15 @@ window.onload = function ()
   //var playerSpeed;
   var cursors;
 
+  var zombie;
+
   var heart;
   var lung;
   var brain;
 
   var itemCounter = 0;
   var scoreCounter = 0;
+  var zombieCounter = 0;
 
   var text;
 
@@ -25,6 +28,7 @@ window.onload = function ()
     game.load.image('heart', "assets/heart.png");
     game.load.image('lung', "assets/lung.png");
     game.load.image('brain', "assets/brain.png");
+    game.load.image('zombie', "assets/zombie.png")
   }
 
   function create()
@@ -85,6 +89,15 @@ window.onload = function ()
         break;
       }
     }
+    zombieCounter = itemCounter%10;
+    while(zombieCounter == 0)
+    {
+      createEnemy();
+      if(zombieCounter != 0)
+      {
+        break;
+      }
+    }
  }
 
  function createOrgan()
@@ -133,6 +146,14 @@ window.onload = function ()
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
+ }
+
+ function createEnemy()
+ {
+   zombie = game.add.sprite(game.world.randomX, game.world.randomY, 'zombie');
+   game.physics.p2.enable(zombie);
+   heart.body.setRectangle(100,100,0,0)
+   heart.body.setZeroVelocity();
  }
 
 
