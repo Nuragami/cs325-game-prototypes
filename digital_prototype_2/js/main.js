@@ -139,21 +139,21 @@ window.onload = function ()
  }
  function collectHeart(body1, body2)
  {
-    body2.sprite.destroy();
+    body2.sprite.kill();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
  }
  function collectLung(body1, body2)
  {
-    body2.sprite.destroy();
+    body2.sprite.kill();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
  }
  function collectBrain(body1, body2)
  {
-    body2.sprite.destroy();
+    body2.sprite.kill();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
