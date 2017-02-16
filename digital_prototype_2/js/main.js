@@ -44,7 +44,7 @@ window.onload = function ()
 
     player.body.onBeginContact.add(collectItem, this);
 
-    text = game.add.text(game.world.centerX-700, game.world.centerY-200, "You collected 0 organs!",{
+    text = game.add.text(game.world.centerX-650, game.world.centerY-250, "You collected 0 organs!",{
       font: "20px Arial",
       fill: "#ff0044",
       align: "center"
@@ -119,21 +119,21 @@ window.onload = function ()
  {
    if(heart)
    {
-    this.heart.kill();
+    heart.destroy();
     itemCounter = itemCounter - 1;
     scoreCounter = scoreCounter + 1;
     text.setText("You collected " + scoreCounter + " organs!");
    }
    if(lung)
    {
-     this.lung.kill();
+     lung.destroy();
      itemCounter = itemCounter - 1;
      scoreCounter = scoreCounter + 1;
      text.setText("You collected " + scoreCounter + " organs!");
    }
    if(brain)
    {
-     this.brain.kill();
+     brain.destroy();
      itemCounter = itemCounter - 1;
      scoreCounter = scoreCounter + 1;
      text.setText("You collected " + scoreCounter + " organs!");
