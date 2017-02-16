@@ -64,7 +64,7 @@ window.onload = function ()
       createItem();
     }
     game.physics.arcade.overlap(player, heart, collectHeart, null, this);
-    game.physics.arcade.overlap(player, lung, collectLung null, this);
+    game.physics.arcade.overlap(player, lung, collectLung, null, this);
     game.physics.arcade.overlap(player, brain, collectBrain, null, this);
  }
 
