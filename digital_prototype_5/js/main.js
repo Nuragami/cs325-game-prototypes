@@ -31,6 +31,7 @@ window.onload = function ()
         player.body.bounce.y = 0.1;
         player.body.collideWorldBounds = true;
         player.body.setSize(60, 90, 5, 16);
+        player.anchor.setTo(0.5, 1);
 
         //player animations
         //player.animations.add('left', [0, 1, 2, 3], 10, true);
@@ -51,6 +52,7 @@ window.onload = function ()
         //left movement
         if (cursors.left.isDown)
         {
+            phaser.scale.x = -1
             player.body.velocity.x = -250;
 
             //if (facing != 'left')
@@ -62,6 +64,7 @@ window.onload = function ()
         //right movement
         else if (cursors.right.isDown)
         {
+            player.scale.x = 1;
             player.body.velocity.x = 250;
 
             //if (facing != 'right')
