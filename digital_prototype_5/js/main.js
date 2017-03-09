@@ -26,7 +26,7 @@ window.onload = function ()
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
         //player
-        player = game.add.sprite(game.world.centerX, game.world.centerY + 200, 'player');
+        player = game.add.sprite(game.world.centerX, game.world.centerY + 250, 'player');
         game.physics.enable(player, Phaser.Physics.ARCADE);
         player.body.bounce.y = 0.1;
         player.body.collideWorldBounds = true;
