@@ -5,7 +5,10 @@ window.onload = function ()
     var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
     
     var cursors;
-    var jumpButton;
+    var blueButton;
+    var redButton;
+    var greenButton;
+    var normalButton;
     var background;
     var player;
 
@@ -35,7 +38,10 @@ window.onload = function ()
         
         //player input
         cursors = game.input.keyboard.createCursorKeys();
-        jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);        
+        blueButton = game.input.keyboard.addKey(Phaser.Keyboard.W);
+        redButton = game.input.keyboard.addKey(Phaser.Keyboard.E);
+        redButton = game.input.keyboard.addKey(Phaser.Keyboard.R)
+        normalButton = game.input.keyboard.addKey(Phaser.Keyboard.Q);
     }
 
     function update()
@@ -44,24 +50,28 @@ window.onload = function ()
         //left movement
         if (cursors.left.isDown)
         {
-            player.tint = 0xFF0000;
             player.scale.x = -1
             player.body.velocity.x = -250;
         }
         //right movement
         else if (cursors.right.isDown)
         {
-            player.tint = 0x0000FF
             player.scale.x = 1;
             player.body.velocity.x = 250;
         }
        
-        if (jumpButton.isDown && player.body.onFloor() && game.time.now > jumpTimer)
+        if (Q.isDown)
         {
-            player.body.velocity.y = -250;
-            jumpTimer = game.time.now + 750;
+            player.tint = 0xFFFFFF;
         }
-
+        if (WisDown)
+        {
+            player.tint = 0x0004FF;
+        }
+        if (E.isDown)
+        {
+            player.tint = 0xFF0000;
+        }
     }
 
 
