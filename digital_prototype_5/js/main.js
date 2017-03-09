@@ -40,7 +40,7 @@ window.onload = function ()
         cursors = game.input.keyboard.createCursorKeys();
         blueButton = game.input.keyboard.addKey(Phaser.Keyboard.W);
         redButton = game.input.keyboard.addKey(Phaser.Keyboard.E);
-        redButton = game.input.keyboard.addKey(Phaser.Keyboard.R)
+        greenButton = game.input.keyboard.addKey(Phaser.Keyboard.R)
         normalButton = game.input.keyboard.addKey(Phaser.Keyboard.Q);
     }
 
@@ -60,15 +60,15 @@ window.onload = function ()
             player.body.velocity.x = 250;
         }
        
-        if (Q.isDown)
+        if (normalButton.isDown)
         {
             player.tint = 0xFFFFFF;
         }
-        if (WisDown)
+        if (blueButton.isDown)
         {
             player.tint = 0x0004FF;
         }
-        if (E.isDown)
+        if (redButton.isDown)
         {
             player.tint = 0xFF0000;
         }
