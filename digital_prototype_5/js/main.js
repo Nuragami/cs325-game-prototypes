@@ -237,19 +237,19 @@ window.onload = function ()
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
         }
-        else if (game.physics.arcade.collide(blueblock, player) && isPlayerBlue != true)
+        if(game.physics.arcade.collide(blueblock, player) && isPlayerBlue != true)
         {
             game.debug.text("Hit");
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
         }
-        else if (game.physics.arcade.collide(redblock, player) && isPlayerRed != true)
+        if(game.physics.arcade.collide(redblock, player) && isPlayerRed != true)
         {
             game.debug.text("Hit");
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
         }
-        else (game.physics.arcade.collide(greenblock, player) && isPlayerGreen != true)
+        if(game.physics.arcade.collide(greenblock, player) && isPlayerGreen != true)
         {
             game.debug.text("Hit");
             lives = lives - 1;
