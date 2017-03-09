@@ -55,6 +55,7 @@ window.onload = function ()
 
         block = game.add.sprite(400, 0);
         block.anchor.setTo(0.5, 0.5);
+        game.physics.enable(block, Phaser.Physics.ARCADE);
         blockGroup = this.add.group();
         blockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         blockGroup.create(50, 'block');
