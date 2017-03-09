@@ -61,20 +61,23 @@ window.onload = function ()
         redButton = game.input.keyboard.addKey(Phaser.Keyboard.E);
         greenButton = game.input.keyboard.addKey(Phaser.Keyboard.R)
         normalButton = game.input.keyboard.addKey(Phaser.Keyboard.Q);
-
+        //block
         block = game.add.sprite(400, 0, 'block');
         block.anchor.setTo(0.5, 0.5);
         game.physics.enable(block, Phaser.Physics.ARCADE);
+        //blue
         blueblock = game.add.sprite(400, 0, 'blueblock');
         blueblock.anchor.setTo(0.5, 0.5);
         game.physics.enable(blueblock, Phaser.Physics.ARCADE);
+        //red
         redblock = game.add.sprite(400, 0, 'redblock');
         redblock.anchor.setTo(0.5, 0.5);
         game.physics.enable(redblock, Phaser.Physics.ARCADE);
+        //green
         greenblock = game.add.sprite(400, 0, 'greenblock');
         greenblock.anchor.setTo(0.5, 0.5);
         game.physics.enable(greenblock, Phaser.Physics.ARCADE);
-
+        //blockgroup
         blockGroup = this.add.group();
         blockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         blockGroup.create(50, 'block');
@@ -82,6 +85,7 @@ window.onload = function ()
         blockGroup.setAll('anchor.y', 0.5);
         blockGroup.setAll('outOfBoundsKill', true);
         blockGroup.setAll('checkWorldBounds', true);
+        //blueblockgroup
         blueblockGroup = this.add.group();
         blueblockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         blueblockGroup.create(50, 'blueblock');
@@ -89,6 +93,7 @@ window.onload = function ()
         blueblockGroup.setAll('anchor.y', 0.5);
         blueblockGroup.setAll('outOfBoundsKill', true);
         blueblockGroup.setAll('checkWorldBounds', true);
+        //redblockgroup
         redblockGroup = this.add.group();
         redblockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         redblockGroup.create(50, 'redblock');
@@ -96,6 +101,7 @@ window.onload = function ()
         redblockGroup.setAll('anchor.y', 0.5);
         redblockGroup.setAll('outOfBoundsKill', true);
         redblockGroup.setAll('checkWorldBounds', true);
+        //greenblockgroup
         greenblockGroup = this.add.group();
         greenblockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         greenblockGroup.create(50, 'greenblock');
