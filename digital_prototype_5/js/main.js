@@ -134,7 +134,7 @@ window.onload = function ()
                 block.tint = 0x26B000;
             }
             block.reset(getRandomInt(20, 780), 0);
-            block.body.velocity.y = rnd.integerInRange(30, 60);
+            block.body.velocity.y = getRandomInt(30, 60);
         }
     }
 
