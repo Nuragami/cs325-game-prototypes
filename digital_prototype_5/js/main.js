@@ -16,6 +16,7 @@ window.onload = function ()
     var isPlayerRed;
     var isPlayerGreen;
     var blockGroup;
+    var block;
     var nextBlockAt;
     var blockDelay;
     var time;
@@ -52,6 +53,8 @@ window.onload = function ()
         greenButton = game.input.keyboard.addKey(Phaser.Keyboard.R)
         normalButton = game.input.keyboard.addKey(Phaser.Keyboard.Q);
 
+        block = game.add.sprite(400, 0);
+        block.anchor.setTo(0.5, 0.5);
         blockGroup = this.add.group();
         blockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         blockGroup.create(50, 'block');
