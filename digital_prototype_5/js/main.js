@@ -11,7 +11,7 @@ window.onload = function ()
     var normalButton;
     var background;
     var player;
-    var isPlayerNormal = true;
+    var isPlayerNormal;
     var isPlayerBlue;
     var isPlayerRed;
     var isPlayerGreen;
@@ -133,64 +133,60 @@ window.onload = function ()
         });
         livesText.anchor.setTo(0.5, 0.5);
         livesText.fixedToCamera = true;
+
+        isPlayerNormal = true;
+        isPlayerBlue = false;
+        isPlayerRed = false;
+        isPlayerGreen = false;
     }
 
-    function update()
-    {
+    function update() {
         timerText.setText("Timer: " + time);
         player.body.velocity.x = 0;
         //left movement
-        if (cursors.left.isDown)
-        {
+        if (cursors.left.isDown) {
             player.scale.x = -1
             player.body.velocity.x = -250;
         }
-        //right movement
-        else if (cursors.right.isDown)
-        {
+            //right movement
+        else if (cursors.right.isDown) {
             player.scale.x = 1;
             player.body.velocity.x = 250;
         }
-       
-        if (normalButton.isDown)
-        {
+
+        if (normalButton.isDown) {
             player.tint = 0xFFFFFF;
-            isPlayerNormal = true;           
+            isPlayerNormal = true;
             isPlayerBlue = false;
             isPlayerRed = false;
             isPlayerGreen = false;
         }
-        if (blueButton.isDown)
-        {
+        if (blueButton.isDown) {
             player.tint = 0x0004FF;
             isPlayerBlue = true;
-            isPlayerNormal = false;           
+            isPlayerNormal = false;
             isPlayerRed = false;
             isPlayerGreen = false;
         }
-        if (redButton.isDown)
-        {
+        if (redButton.isDown) {
             player.tint = 0xFF0000;
             isPlayerRed = true;
             isPlayerNormal = false;
-            isPlayerBlue = false;            
+            isPlayerBlue = false;
             isPlayerGreen = false;
         }
-        if (greenButton.isDown)
-        {
+        if (greenButton.isDown) {
             player.tint = 0x26B000;
             isPlayerGreen = true;
             isPlayerNormal = false;
             isPlayerBlue = false;
-            isPlayerRed = false;            
+            isPlayerRed = false;
         }
-       
+
         //SpawnBlock();
-        if (nextBlockAt < this.time.now)
-        {
-            var i = getRandomInt(-1, 4);                     
-            if (i == 1)
-            {
+        if (nextBlockAt < this.time.now) {
+            var i = getRandomInt(-1, 4);
+            if (i == 1) {
                 nextBlockAt = this.time.now + blockDelay;
                 block = blockGroup.getFirstExists(false);
                 block = game.add.sprite(400, 0, 'block');
@@ -199,18 +195,16 @@ window.onload = function ()
                 block.reset(getRandomInt(20, 780), 0);
                 block.body.velocity.y = getRandomInt(100, 150);
             }
-            else if (i == 2)
-            {
+            if (i == 2) {
                 nextBlockAt = this.time.now + blockDelay;
-                blueblock =blueblockGroup.getFirstExists(false);
+                blueblock = blueblockGroup.getFirstExists(false);
                 blueblock = game.add.sprite(400, 0, 'blueblock');
                 blueblock.anchor.setTo(0.5, 0.5);
                 game.physics.enable(blueblock, Phaser.Physics.ARCADE);
                 blueblock.reset(getRandomInt(20, 780), 0);
                 blueblock.body.velocity.y = getRandomInt(100, 150);
             }
-            else if (i == 3)
-            {
+            if (i == 3) {
                 nextBlockAt = this.time.now + blockDelay;
                 redblock = redblockGroup.getFirstExists(false);
                 redblock = game.add.sprite(400, 0, 'redblock');
@@ -219,8 +213,7 @@ window.onload = function ()
                 redblock.reset(getRandomInt(20, 780), 0);
                 redblock.body.velocity.y = getRandomInt(100, 150);
             }
-            else if (i == 4)
-            {
+            if (i == 4) {
                 nextBlockAt = this.time.now + blockDelay;
                 greenblock = greenblockGroup.getFirstExists(false);
                 greenblock = game.add.sprite(400, 0, 'greenblock');
@@ -228,49 +221,73 @@ window.onload = function ()
                 game.physics.enable(greenblock, Phaser.Physics.ARCADE);
                 greenblock.reset(getRandomInt(20, 780), 0);
                 greenblock.body.velocity.y = getRandomInt(100, 150);
-            }            
+            }
         }
         //check collision
-        if(game.physics.arcade.collide(block, player))
-        {
-            if (isPlayerNormal == false)
-            {
-                //game.debug.text("Hit");
+        if (isPlayerNormal == false) {
+            if (game.physics.arcade.collide(player, block)) {
                 lives = lives - 1;
                 block.destroy();
                 livesText.setText("You have " + lives + " lives left!");
-            }           
+            }
+            else if (game.physics.arcade.collide(player, blueblock)) {
+                blueblock.destroy();
+            }
+            else if (game.physics.arcade.collide(player, redblock)) {
+                redblock.destroy();
+            }
+            else if (game.physics.arcade.collide(player, greenblock)) {
+                greenblock.destroy();
+            }
         }
-        if(game.physics.arcade.collide(blueblock, player))
-        {
-            if (isPlayerBlue == false)
-            {
-                //game.debug.text("Hit");
+        if (isPlayerBlue == false) {
+            if (game.physics.arcade.collide(player, blueblock)) {
                 lives = lives - 1;
                 blueblock.destroy();
                 livesText.setText("You have " + lives + " lives left!");
-            }       
+            }
+            else if (game.physics.arcade.collide(player, block)) {
+                block.destroy();
+            }
+            else if (game.physics.arcade.collide(player, redblock)) {
+                redblock.destroy();
+            }
+            else if (game.physics.arcade.collide(player, greenblock)) {
+                greenblock.destroy();
+            }
         }
-        if(game.physics.arcade.collide(redblock, player))
-        {
-            if (isPlayerRed == false)
-            {
-                //game.debug.text("Hit");
+        if (isPlayerRed == false) {
+            if (game.physics.arcade.collide(player, redblock)) {
                 lives = lives - 1;
                 redblock.destroy();
                 livesText.setText("You have " + lives + " lives left!");
             }
-}
-        if (game.physics.arcade.collide(greenblock, player))
-        {
-            if (isPlayerGreen == false)
-            {
-                //game.debug.text("Hit");
+            else if (game.physics.arcade.collide(player, block)) {
+                block.destroy();
+            }
+            else if (game.physics.arcade.collide(player, blueblock)) {
+                blueblock.destroy();
+            }
+            else if (game.physics.arcade.collide(player, greenblock)) {
+                greenblock.destroy();
+            }
+        }
+        if (isPlayerGreen == false) {
+            if (game.physics.arcade.collide(player, greenblock)) {
                 lives = lives - 1;
                 greenblock.destroy();
                 livesText.setText("You have " + lives + " lives left!");
             }
-        }        
+            else if (game.physics.arcade.collide(player, block)) {
+                block.destroy();
+            }
+            else if (game.physics.arcade.collide(player, blueblock)) {
+                blueblock.destroy();
+            }
+            else if (game.physics.arcade.collide(player, redblock)) {
+                redblock.destroy();
+            }
+        }
     }
 
     function getRandomInt(min, max)
