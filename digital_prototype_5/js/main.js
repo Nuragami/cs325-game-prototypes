@@ -53,41 +53,41 @@ window.onload = function ()
         {
             player.body.velocity.x = -150;
 
-            if (facing != 'left')
-            {
-                player.animations.play('left');
-                facing = 'left';
-            }
+            //if (facing != 'left')
+            //{
+            //    player.animations.play('left');
+            //    facing = 'left';
+            //}
         }
         //right movement
         else if (cursors.right.isDown)
         {
             player.body.velocity.x = 150;
 
-            if (facing != 'right')
-            {
-                player.animations.play('right');
-                facing = 'right';
-            }
+            //if (facing != 'right')
+            //{
+            //    player.animations.play('right');
+            //    facing = 'right';
+            //}
         }
         //idle
-        else
-        {
-            if (facing != 'idle')
-            {
-                player.animations.stop();
+        //else
+        //{
+        //    if (facing != 'idle')
+        //    {
+        //        player.animations.stop();
 
-                if (facing == 'left')
-                {
-                    player.frame = 0;
-                }
-                else
-                {
-                    player.frame = 5;
-                }
-                facing = 'idle';
-            }
-        }
+        //        if (facing == 'left')
+        //        {
+        //            player.frame = 0;
+        //        }
+        //        else
+        //        {
+        //            player.frame = 5;
+        //        }
+        //        facing = 'idle';
+        //    }
+        //}
         //jump
         if (jumpButton.isDown && player.body.onFloor() && game.time.now > jumpTimer)
         {
