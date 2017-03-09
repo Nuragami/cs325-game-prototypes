@@ -53,7 +53,7 @@ window.onload = function ()
         greenButton = game.input.keyboard.addKey(Phaser.Keyboard.R)
         normalButton = game.input.keyboard.addKey(Phaser.Keyboard.Q);
 
-        block = game.add.sprite(400, 0);
+        block = game.add.sprite(400, 0, 'block');
         block.anchor.setTo(0.5, 0.5);
         game.physics.enable(block, Phaser.Physics.ARCADE);
         blockGroup = this.add.group();
