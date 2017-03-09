@@ -109,6 +109,7 @@ window.onload = function ()
         {
             nextBlockAt = time.now + blockDelay;
             var block = blockGroup.getFirstExists(false);
+            var i = rnd.integerInRange(1, 4);
             if (i == 1)
             {
                 //Normal
@@ -131,7 +132,6 @@ window.onload = function ()
             }
             block.reset(rnd.integerInRange(20, 780), 0);
             block.body.velocity.y = rnd.integerInRange(30, 60);
-            var i = rnd.integerInRange(1, 4);
         }        
     }
 
