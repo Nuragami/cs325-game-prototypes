@@ -32,14 +32,6 @@ window.onload = function ()
         player.body.collideWorldBounds = true;
         player.body.setSize(60, 90, 5, 16);
         player.anchor.setTo(0.5, 1);
-
-        //player animations
-        //player.animations.add('left', [0, 1, 2, 3], 10, true);
-        //player.animations.add('turn', [4], 20, true);
-        //player.animations.add('right', [5, 6, 7, 8], 10, true);
-
-
-
         
         //player input
         cursors = game.input.keyboard.createCursorKeys();
@@ -52,46 +44,18 @@ window.onload = function ()
         //left movement
         if (cursors.left.isDown)
         {
+            player.tint = 0xFF0000;
             player.scale.x = -1
             player.body.velocity.x = -250;
-
-            //if (facing != 'left')
-            //{
-            //    player.animations.play('left');
-            //    facing = 'left';
-            //}
         }
         //right movement
         else if (cursors.right.isDown)
         {
+            player.tint = 0x0000FF
             player.scale.x = 1;
             player.body.velocity.x = 250;
-
-            //if (facing != 'right')
-            //{
-            //    player.animations.play('right');
-            //    facing = 'right';
-            //}
         }
-        //idle
-        //else
-        //{
-        //    if (facing != 'idle')
-        //    {
-        //        player.animations.stop();
-
-        //        if (facing == 'left')
-        //        {
-        //            player.frame = 0;
-        //        }
-        //        else
-        //        {
-        //            player.frame = 5;
-        //        }
-        //        facing = 'idle';
-        //    }
-        //}
-        //jump
+       
         if (jumpButton.isDown && player.body.onFloor() && game.time.now > jumpTimer)
         {
             player.body.velocity.y = -250;
