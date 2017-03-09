@@ -231,28 +231,32 @@ window.onload = function ()
             }            
         }
         //check collision
-        if(game.physics.arcade.collide(block, player) && isPlayerNormal != true)
+        if(game.physics.arcade.collide(block, player) && isPlayerNormal == false)
         {
             game.debug.text("Hit");
             lives = lives - 1;
+            block.destroy();
             livesText.setText("You have " + lives + " lives left!");
         }
-        if(game.physics.arcade.collide(blueblock, player) && isPlayerBlue != true)
+        if(game.physics.arcade.collide(blueblock, player) && isPlayerBlue == false)
         {
             game.debug.text("Hit");
             lives = lives - 1;
+            blueblock.destory();
             livesText.setText("You have " + lives + " lives left!");
         }
-        if(game.physics.arcade.collide(redblock, player) && isPlayerRed != true)
+        if(game.physics.arcade.collide(redblock, player) && isPlayerRed == false)
         {
             game.debug.text("Hit");
             lives = lives - 1;
+            redblock.destroy();
             livesText.setText("You have " + lives + " lives left!");
         }
-        if(game.physics.arcade.collide(greenblock, player) && isPlayerGreen != true)
+        if (game.physics.arcade.collide(greenblock, player) && isPlayerGreen == false)
         {
             game.debug.text("Hit");
             lives = lives - 1;
+            greenblock.destroy();
             livesText.setText("You have " + lives + " lives left!");
         }        
     }
