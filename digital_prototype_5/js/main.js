@@ -162,7 +162,7 @@ window.onload = function ()
             isPlayerBlue = false;
             isPlayerRed = false;
             isPlayerGreen = false;
-            while (isPlayerNormal == true) {
+            if (isPlayerNormal == true) {
                 if (game.physics.arcade.collide(block, player)) {
                     block.destroy();
                 }
@@ -189,7 +189,7 @@ window.onload = function ()
             isPlayerNormal = false;
             isPlayerRed = false;
             isPlayerGreen = false;
-            while (isPlayerBlue == true) {
+            if (isPlayerBlue == true) {
                 if (game.physics.arcade.collide(blueblock, player)) {
                     blueblock.destroy();
                 }
@@ -216,7 +216,7 @@ window.onload = function ()
             isPlayerNormal = false;
             isPlayerBlue = false;
             isPlayerGreen = false;
-            while (isPlayerRed == true) {
+            if (isPlayerRed == true) {
                 if (game.physics.arcade.collide(redblock, player)) {
                     redblock.destroy();
                 }
@@ -243,7 +243,7 @@ window.onload = function ()
             isPlayerNormal = false;
             isPlayerBlue = false;
             isPlayerRed = false;
-            while (isPlayerGreen == true) {
+            if (isPlayerGreen == true) {
                 if (game.physics.arcade.collide(greenblock, player)) {
                     greenblock.destroy();
                 }
