@@ -186,6 +186,13 @@ window.onload = function ()
                 game.physics.enable(block, Phaser.Physics.ARCADE);
                 block.reset(getRandomInt(20, 780), 0);
                 block.body.velocity.y = getRandomInt(100, 150);
+                //check collision
+                if (game.physics.arcade.collide(block, player) && isPlayerNormal != false)
+                {
+                    game.debug.text("Hit");
+                    lives = lives - 1;
+                    livesText.setText("You have " + lives + " lives left!");
+                }
             }
             if (i == 2)
             {
@@ -196,6 +203,12 @@ window.onload = function ()
                 game.physics.enable(blueblock, Phaser.Physics.ARCADE);
                 blueblock.reset(getRandomInt(20, 780), 0);
                 blueblock.body.velocity.y = getRandomInt(100, 150);
+                if (game.physics.arcade.collide(blueblock, player) && isPlayerBlue != false)
+                {
+                    game.debug.text("Hit");
+                    lives = lives - 1;
+                    livesText.setText("You have " + lives + " lives left!");
+                }
             }
             if (i == 3)
             {
@@ -206,6 +219,12 @@ window.onload = function ()
                 game.physics.enable(redblock, Phaser.Physics.ARCADE);
                 redblock.reset(getRandomInt(20, 780), 0);
                 redblock.body.velocity.y = getRandomInt(100, 150);
+                if (game.physics.arcade.collide(redblock, player) && isPlayerRed != false)
+                {
+                    game.debug.text("Hit");
+                    lives = lives - 1;
+                    livesText.setText("You have " + lives + " lives left!");
+                }
             }
             if (i == 4)
             {
@@ -216,33 +235,39 @@ window.onload = function ()
                 game.physics.enable(greenblock, Phaser.Physics.ARCADE);
                 greenblock.reset(getRandomInt(20, 780), 0);
                 greenblock.body.velocity.y = getRandomInt(100, 150);
+                if (game.physics.arcade.collide(greenblock, player) && isPlayerGreen != false)
+                {
+                    game.debug.text("Hit");
+                    lives = lives - 1;
+                    livesText.setText("You have " + lives + " lives left!");
+                }
             }            
         }
         //check collision
-        if(game.physics.arcade.collide(block, player) && isPlayerNormal != false)
-        {
-            game.debug.text("Hit");
-            lives = lives - 1;
-            livesText.setText("You have " + lives + " lives left!");
-        }
-        if (game.physics.arcade.collide(blueblock, player) && isPlayerBlue != false)
-        {
-            game.debug.text("Hit");
-            lives = lives - 1;
-            livesText.setText("You have " + lives + " lives left!");
-        }
-        if (game.physics.arcade.collide(redblock, player) && isPlayerRed != false)
-        {
-            game.debug.text("Hit");
-            lives = lives - 1;
-            livesText.setText("You have " + lives + " lives left!");
-        }
-        if (game.physics.arcade.collide(greenblock, player) && isPlayerGreen != false)
-        {
-            game.debug.text("Hit");
-            lives = lives - 1;
-            livesText.setText("You have " + lives + " lives left!");
-        }        
+        //if(game.physics.arcade.collide(block, player) && isPlayerNormal != false)
+        //{
+        //    game.debug.text("Hit");
+        //    lives = lives - 1;
+        //    livesText.setText("You have " + lives + " lives left!");
+        //}
+        //if (game.physics.arcade.collide(blueblock, player) && isPlayerBlue != false)
+        //{
+        //    game.debug.text("Hit");
+        //    lives = lives - 1;
+        //    livesText.setText("You have " + lives + " lives left!");
+        //}
+        //if (game.physics.arcade.collide(redblock, player) && isPlayerRed != false)
+        //{
+        //    game.debug.text("Hit");
+        //    lives = lives - 1;
+        //    livesText.setText("You have " + lives + " lives left!");
+        //}
+        //if (game.physics.arcade.collide(greenblock, player) && isPlayerGreen != false)
+        //{
+        //    game.debug.text("Hit");
+        //    lives = lives - 1;
+        //    livesText.setText("You have " + lives + " lives left!");
+        //}        
     }
 
     function getRandomInt(min, max)
