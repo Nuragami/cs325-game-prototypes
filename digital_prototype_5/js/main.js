@@ -221,21 +221,25 @@ window.onload = function ()
         //check collision
         if(game.physics.arcade.collide(block, player) && isPlayerNormal != false)
         {
+            game.debug.text("Hit");
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
         }
         if (game.physics.arcade.collide(blueblock, player) && isPlayerBlue != false)
         {
+            game.debug.text("Hit");
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
         }
         if (game.physics.arcade.collide(redblock, player) && isPlayerRed != false)
         {
+            game.debug.text("Hit");
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
         }
         if (game.physics.arcade.collide(greenblock, player) && isPlayerGreen != false)
         {
+            game.debug.text("Hit");
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
         }        
