@@ -26,6 +26,7 @@ window.onload = function ()
     var nextBlockAt;
     var blockDelay;
     var time;
+    var timerText;
 
     function preload()
     {
@@ -113,10 +114,18 @@ window.onload = function ()
         greenblockGroup.setAll('checkWorldBounds', true);
         nextBlockAt = 0;
         blockDelay = 500;
+        
+        //Timer text
+        timerText = game.add.text(game.world.centerX - 650, game.world.centerY - 250, "Time: ", {
+            font: "20px Arial",
+            fill: "#ff0044",
+            align: "center"
+        });
     }
 
     function update()
     {
+        timerText.setText("Timer: " + Phaser.Timer.SECOND);
         player.body.velocity.x = 0;
         //left movement
         if (cursors.left.isDown)
