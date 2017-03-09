@@ -55,7 +55,7 @@ window.onload = function ()
         game.physics.enable(player, Phaser.Physics.ARCADE);
         player.body.bounce.y = 0.1;
         player.body.collideWorldBounds = true;
-        player.body.setSize(60, 90, 5, 16);
+        //player.body.setSize(60, 90, 5, 16);
         player.anchor.setTo(0.5, 1);
         
         //player input
@@ -154,28 +154,28 @@ window.onload = function ()
             player.body.velocity.x = 250;
         }
 
-        if (normalButton.isDown) {
+        if (normalButton.onDownCallback) {
             player.tint = 0xFFFFFF;
             isPlayerNormal = true;
             isPlayerBlue = false;
             isPlayerRed = false;
             isPlayerGreen = false;
         }
-        if (blueButton.isDown) {
+        if (blueButton.onDownCallback) {
             player.tint = 0x0004FF;
             isPlayerBlue = true;
             isPlayerNormal = false;
             isPlayerRed = false;
             isPlayerGreen = false;
         }
-        if (redButton.isDown) {
+        if (redButton.onDownCallback) {
             player.tint = 0xFF0000;
             isPlayerRed = true;
             isPlayerNormal = false;
             isPlayerBlue = false;
             isPlayerGreen = false;
         }
-        if (greenButton.isDown) {
+        if (greenButton.onDownCallback) {
             player.tint = 0x26B000;
             isPlayerGreen = true;
             isPlayerNormal = false;
