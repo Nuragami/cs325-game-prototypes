@@ -101,29 +101,41 @@ window.onload = function ()
         }
 
         //SpawnBlock();
-        if (nextBlockAt < this.time.now) {
+        if (nextBlockAt < this.time.now)
+        {
             nextBlockAt = this.time.now + blockDelay;
             var block = blockGroup.getFirstExists(false);
-            var i = rnd.integerInRange(1, 4);
-            if (i == 1) {
+            i = getRandomInt(-1, 3);
+            if (i == 1)
+            {
                 //Normal
                 block.tint = 0xFFFFFF;
             }
-            if (i == 2) {
+            if (i == 2)
+            {
                 //Blue
                 block.tint = 0x0004FF;
             }
-            if (i == 3) {
+            if (i == 3)
+            {
                 //Red
                 block.tint = 0xFF0000;
             }
-            if (i == 4) {
+            if (i == 4)
+            {
                 //Green
                 block.tint = 0x26B000;
             }
-            block.reset(rnd.integerInRange(20, 780), 0);
+            block.reset(getRandomInt(20, 780), 0);
             block.body.velocity.y = rnd.integerInRange(30, 60);
         }
+    }
+
+    function getRandomInt(min, max)
+    {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     //function SpawnBlock()
