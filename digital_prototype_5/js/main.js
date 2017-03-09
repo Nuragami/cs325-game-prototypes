@@ -184,11 +184,7 @@ window.onload = function ()
             isPlayerBlue = false;
             isPlayerRed = false;            
         }
-        isPlayerNormal = false;
-        isPlayerBlue = false;
-        isPlayerRed= false;
-        isPlayerGreen = false;
-
+       
         //SpawnBlock();
         if (nextBlockAt < this.time.now)
         {
