@@ -103,7 +103,7 @@ window.onload = function ()
         SpawnBlock();
     }
 
-    void SpawnBlock()
+    function SpawnBlock()
     {
         if (nextBlockAt < time.now)
         {
