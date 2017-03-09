@@ -141,7 +141,11 @@ window.onload = function ()
     }
 
     function update() {
-        timerText.setText("Timer: " + time);
+        isPlayerNormal = true;
+        isPlayerBlue = false;
+        isPlayerRed = false;
+        isPlayerGreen = false;
+        timerText.setText("Timer: " + time.now);
         player.body.velocity.x = 0;
         //left movement
         if (cursors.left.isDown) {
