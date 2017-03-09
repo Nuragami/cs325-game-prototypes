@@ -224,68 +224,102 @@ window.onload = function ()
             }
         }
         //check collision
-        if (isPlayerNormal == false) {
-            if (game.physics.arcade.collide(player, block)) {
-                lives = lives - 1;
+        if (isPlayerNormal == true)
+        {
+            if (game.physics.arcade.collide(player, block))
+            {
                 block.destroy();
+            }
+            else if (game.physics.arcade.collide(player, blueblock))
+            {
+                lives = lives - 1;
+                blueblock.destroy();
                 livesText.setText("You have " + lives + " lives left!");
             }
-            else if (game.physics.arcade.collide(player, blueblock)) {
-                blueblock.destroy();
-            }
-            else if (game.physics.arcade.collide(player, redblock)) {
+            else if (game.physics.arcade.collide(player, redblock))
+            {
+                lives = lives - 1;
                 redblock.destroy();
+                livesText.setText("You have " + lives + " lives left!");
             }
-            else if (game.physics.arcade.collide(player, greenblock)) {
+            else if (game.physics.arcade.collide(player, greenblock))
+            {
+                lives = lives - 1;
                 greenblock.destroy();
+                livesText.setText("You have " + lives + " lives left!");
             }
         }
-        if (isPlayerBlue == false) {
-            if (game.physics.arcade.collide(player, blueblock)) {
-                lives = lives - 1;
+        if (isPlayerBlue == true) {
+            if (game.physics.arcade.collide(player, blueblock))
+            {
                 blueblock.destroy();
+            }
+            else if (game.physics.arcade.collide(player, block))
+            {
+                lives = lives - 1;
+                block.destroy();
                 livesText.setText("You have " + lives + " lives left!");
             }
-            else if (game.physics.arcade.collide(player, block)) {
-                block.destroy();
-            }
-            else if (game.physics.arcade.collide(player, redblock)) {
+            else if (game.physics.arcade.collide(player, redblock))
+            {
+                lives = lives - 1;
                 redblock.destroy();
+                livesText.setText("You have " + lives + " lives left!");
             }
-            else if (game.physics.arcade.collide(player, greenblock)) {
+            else if (game.physics.arcade.collide(player, greenblock))
+            {
+                lives = lives - 1;
                 greenblock.destroy();
+                livesText.setText("You have " + lives + " lives left!");
             }
         }
-        if (isPlayerRed == false) {
-            if (game.physics.arcade.collide(player, redblock)) {
-                lives = lives - 1;
+        if (isPlayerRed == true) {
+            if (game.physics.arcade.collide(player, redblock))
+            {
                 redblock.destroy();
+            }
+            else if (game.physics.arcade.collide(player, block))
+            {
+                lives = lives - 1;
+                block.destroy();
                 livesText.setText("You have " + lives + " lives left!");
             }
-            else if (game.physics.arcade.collide(player, block)) {
-                block.destroy();
-            }
-            else if (game.physics.arcade.collide(player, blueblock)) {
+            else if (game.physics.arcade.collide(player, blueblock))
+            {
+                lives = lives - 1;
                 blueblock.destroy();
+                livesText.setText("You have " + lives + " lives left!");
             }
-            else if (game.physics.arcade.collide(player, greenblock)) {
+            else if (game.physics.arcade.collide(player, greenblock))
+            {
+                lives = lives - 1;
                 greenblock.destroy();
+                livesText.setText("You have " + lives + " lives left!");
             }
         }
-        if (isPlayerGreen == false) {
-            if (game.physics.arcade.collide(player, greenblock)) {
-                lives = lives - 1;
+        if (isPlayerGreen == true)
+        {
+            if (game.physics.arcade.collide(player, greenblock))
+            {
                 greenblock.destroy();
+            }
+            else if (game.physics.arcade.collide(player, block))
+            {
+                lives = lives - 1;
+                block.destroy();
                 livesText.setText("You have " + lives + " lives left!");
             }
-            else if (game.physics.arcade.collide(player, block)) {
-                block.destroy();
-            }
-            else if (game.physics.arcade.collide(player, blueblock)) {
+            else if (game.physics.arcade.collide(player, blueblock))
+            {
+                lives = lives - 1;
                 blueblock.destroy();
+                livesText.setText("You have " + lives + " lives left!");
             }
-            else if (game.physics.arcade.collide(player, redblock)) {
+            else if (game.physics.arcade.collide(player, redblock))
+            {
+                lives = lives - 1;
                 redblock.destroy();
+                livesText.setText("You have " + lives + " lives left!");
             }
         }
     }
