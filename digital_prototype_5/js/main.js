@@ -18,6 +18,7 @@ window.onload = function ()
     var blockGroup;
     var nextBlockAt;
     var blockDelay;
+    var time;
 
     function preload()
     {
