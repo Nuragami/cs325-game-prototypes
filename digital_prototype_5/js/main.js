@@ -16,7 +16,13 @@ window.onload = function ()
     var isPlayerRed;
     var isPlayerGreen;
     var blockGroup;
+    var blueblockGroup;
+    var redblockGroup;
+    var greenblockGroup;
     var block;
+    var blueblock;
+    var redblock;
+    var greenblock;
     var nextBlockAt;
     var blockDelay;
     var time;
@@ -26,6 +32,9 @@ window.onload = function ()
         game.load.image('background', "assets/background.png");
         game.load.image('player', 'assets/player.png');
         game.load.image('block', 'assets/block.png');
+        game.load.image('blueblock', 'assets/blueblock.png');
+        game.load.image('redblock', 'assets/redblock.png');
+        game.load.image('greenblock', 'assets/greenblock.png');
     }
 
     function create()
@@ -56,6 +65,15 @@ window.onload = function ()
         block = game.add.sprite(400, 0, 'block');
         block.anchor.setTo(0.5, 0.5);
         game.physics.enable(block, Phaser.Physics.ARCADE);
+        blueblock = game.add.sprite(400, 0, 'blueblock');
+        blueblock.anchor.setTo(0.5, 0.5);
+        game.physics.enable(blueblock, Phaser.Physics.ARCADE);
+        redblock = game.add.sprite(400, 0, 'redblock');
+        redblock.anchor.setTo(0.5, 0.5);
+        game.physics.enable(redblock, Phaser.Physics.ARCADE);
+        greenblock = game.add.sprite(400, 0, 'greenblock');
+        greenblock.anchor.setTo(0.5, 0.5);
+        game.physics.enable(greenblock, Phaser.Physics.ARCADE);
         blockGroup = this.add.group();
         blockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         blockGroup.create(50, 'block');
@@ -63,6 +81,21 @@ window.onload = function ()
         blockGroup.setAll('anchor.y', 0.5);
         blockGroup.setAll('outOfBoundsKill', true);
         blockGroup.setAll('checkWorldBounds', true);
+        blueblockGroup.create(50, 'blueblock');
+        blueblockGroup.setAll('anchor.x', 0.5);
+        blueblockGroup.setAll('anchor.y', 0.5);
+        blueblockGroup.setAll('outOfBoundsKill', true);
+        blueblockGroup.setAll('checkWorldBounds', true);
+        redblockGroup.create(50, 'redblock');
+        redblockGroup.setAll('anchor.x', 0.5);
+        redblockGroup.setAll('anchor.y', 0.5);
+        redblockGroup.setAll('outOfBoundsKill', true);
+        redblockGroup.setAll('checkWorldBounds', true);
+        greenblockGroup.create(50, 'greenblock');
+        greenblockGroup.setAll('anchor.x', 0.5);
+        greenblockGroup.setAll('anchor.y', 0.5);
+        greenblockGroup.setAll('outOfBoundsKill', true);
+        greenblockGroup.setAll('checkWorldBounds', true);
         nextBlockAt = 0;
         blockDelay = 500;
     }
@@ -107,41 +140,48 @@ window.onload = function ()
         //SpawnBlock();
         if (nextBlockAt < this.time.now)
         {
-            nextBlockAt = this.time.now + blockDelay;
-            var block = blockGroup.getFirstExists(false);            
-          
-            var i = getRandomInt(-1, 4);
+            var i = getRandomInt(-1, 4);                     
             if (i == 1)
             {
+                nextBlockAt = this.time.now + blockDelay;
+                var block = blockGroup.getFirstExists(false);
                 block = game.add.sprite(400, 0, 'block');
                 block.anchor.setTo(0.5, 0.5);
-                //Normal
-                block.tint = 0xFFFFFF;
+                game.physics.enable(block, Phaser.Physics.ARCADE);
+                block.reset(getRandomInt(20, 780), 0);
+                block.body.velocity.y = getRandomInt(30, 60);
             }
             if (i == 2)
             {
-                block = game.add.sprite(400, 0, 'block');
-                block.anchor.setTo(0.5, 0.5);
-                //Blue
-                block.tint = 0x0004FF;
+                nextBlockAt = this.time.now + blockDelay;
+                var blueblock =blueblockGroup.getFirstExists(false);
+                blueblock = game.add.sprite(400, 0, 'blueblock');
+                blueblock.anchor.setTo(0.5, 0.5);
+                game.physics.enable(blueblock, Phaser.Physics.ARCADE);
+                blueblock.reset(getRandomInt(20, 780), 0);
+                blueblock.body.velocity.y = getRandomInt(30, 60);
             }
             if (i == 3)
             {
-                block = game.add.sprite(400, 0, 'block');
-                block.anchor.setTo(0.5, 0.5);
-                //Red
-                block.tint = 0xFF0000;
+                nextBlockAt = this.time.now + blockDelay;
+                var redblock = redblockGroup.getFirstExists(false);
+                redblock = game.add.sprite(400, 0, 'redblock');
+                redblock.anchor.setTo(0.5, 0.5);
+                game.physics.enable(redblock, Phaser.Physics.ARCADE);
+                redblock.reset(getRandomInt(20, 780), 0);
+                redblock.body.velocity.y = getRandomInt(30, 60);
             }
             if (i == 4)
             {
-                block = game.add.sprite(400, 0, 'block');
-                block.anchor.setTo(0.5, 0.5);
-                //Green
-                block.tint = 0x26B000;
+                nextBlockAt = this.time.now + blockDelay;
+                var greenblock = greenblockGroup.getFirstExists(false);
+                greenblock = game.add.sprite(400, 0, 'greenblock');
+                greenblock.anchor.setTo(0.5, 0.5);
+                game.physics.enable(greenblock, Phaser.Physics.ARCADE);
+                greenblock.reset(getRandomInt(20, 780), 0);
+                greenblock.body.velocity.y = getRandomInt(30, 60);
             }
-            game.physics.enable(block, Phaser.Physics.ARCADE);
-            block.reset(getRandomInt(20, 780), 0);
-            block.body.velocity.y = getRandomInt(30, 60);
+            
         }
     }
 
