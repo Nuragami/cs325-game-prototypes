@@ -108,28 +108,40 @@ window.onload = function ()
         if (nextBlockAt < this.time.now)
         {
             nextBlockAt = this.time.now + blockDelay;
-            var block = blockGroup.getFirstExists(false);
-            block = game.add.sprite(400, 0, 'block');
-            block.anchor.setTo(0.5, 0.5);
-            game.physics.enable(block, Phaser.Physics.ARCADE);
             var i = getRandomInt(-1, 4);
             if (i == 1)
             {
+                var block = blockGroup.getFirstExists(false);
+                block = game.add.sprite(400, 0, 'block');
+                block.anchor.setTo(0.5, 0.5);
+                game.physics.enable(block, Phaser.Physics.ARCADE);
                 //Normal
                 block.tint = 0xFFFFFF;
             }
             if (i == 2)
             {
+                var block = blockGroup.getFirstExists(false);
+                block = game.add.sprite(400, 0, 'block');
+                block.anchor.setTo(0.5, 0.5);
+                game.physics.enable(block, Phaser.Physics.ARCADE);
                 //Blue
                 block.tint = 0x0004FF;
             }
             if (i == 3)
             {
+                var block = blockGroup.getFirstExists(false);
+                block = game.add.sprite(400, 0, 'block');
+                block.anchor.setTo(0.5, 0.5);
+                game.physics.enable(block, Phaser.Physics.ARCADE);
                 //Red
                 block.tint = 0xFF0000;
             }
             if (i == 4)
             {
+                var block = blockGroup.getFirstExists(false);
+                block = game.add.sprite(400, 0, 'block');
+                block.anchor.setTo(0.5, 0.5);
+                game.physics.enable(block, Phaser.Physics.ARCADE);
                 //Green
                 block.tint = 0x26B000;
             }
