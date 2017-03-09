@@ -119,14 +119,14 @@ window.onload = function ()
         blockDelay = 500;
         
         //Timer text
-        timerText = game.add.text(game.world.centerX + 100, game.world.centerY + 275, "Time: ", {
-            font: "20px Arial",
-            fill: "#FFFFFF",
-            align: "center"
-        });
-        timerText.anchor.setTo(0.5, 0.5);
-        timerText.fixedToCamera = true;
-        time = game.time.create(true);
+        //timerText = game.add.text(game.world.centerX + 100, game.world.centerY + 275, "Time: ", {
+        //    font: "20px Arial",
+        //    fill: "#FFFFFF",
+        //    align: "center"
+        //});
+        //timerText.anchor.setTo(0.5, 0.5);
+        //timerText.fixedToCamera = true;
+        //time = game.time.create(true);
         //Lives text
         livesText = game.add.text(game.world.centerX - 100, game.world.centerY + 275, "You have 5 lives left!", {
             font: "20px Arial",
