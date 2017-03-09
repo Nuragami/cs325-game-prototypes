@@ -154,28 +154,28 @@ window.onload = function ()
             player.body.velocity.x = 250;
         }
 
-        if (normalButton.onDownCallback) {
+        if (normalButton.onDown) {
             player.tint = 0xFFFFFF;
             isPlayerNormal = true;
             isPlayerBlue = false;
             isPlayerRed = false;
             isPlayerGreen = false;
         }
-        if (blueButton.onDownCallback) {
+        if (blueButton.onDown) {
             player.tint = 0x0004FF;
             isPlayerBlue = true;
             isPlayerNormal = false;
             isPlayerRed = false;
             isPlayerGreen = false;
         }
-        if (redButton.onDownCallback) {
+        if (redButton.onDown) {
             player.tint = 0xFF0000;
             isPlayerRed = true;
             isPlayerNormal = false;
             isPlayerBlue = false;
             isPlayerGreen = false;
         }
-        if (greenButton.onDownCallback) {
+        if (greenButton.onDown) {
             player.tint = 0x26B000;
             isPlayerGreen = true;
             isPlayerNormal = false;
