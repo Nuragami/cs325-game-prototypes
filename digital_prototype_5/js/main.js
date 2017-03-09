@@ -61,7 +61,7 @@ window.onload = function ()
         blockGroup.setAll('checkWorldBounds', true);
         nextBlockAt = 0;
         blockDelay = 500;
-        time = 0;
+        time = time.now;
     }
 
     function update()
@@ -106,9 +106,9 @@ window.onload = function ()
 
     function SpawnBlock()
     {
-        if (nextBlockAt < this.time.now)
+        if (nextBlockAt < time)
         {
-            nextBlockAt = this.time.now + blockDelay;
+            nextBlockAt = time + blockDelay;
             var block = blockGroup.getFirstExists(false);
             var i = rnd.integerInRange(1, 4);
             if (i == 1)
