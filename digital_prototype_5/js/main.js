@@ -11,11 +11,19 @@ window.onload = function ()
     var normalButton;
     var background;
     var player;
+    var isPlayerNormal;
+    var isPlayerBlue;
+    var isPlayerRed;
+    var isPlayerGreen;
+    var enemyGroup;
+    var nextBlockAt;
+    var blockDelay;
 
     function preload()
     {
         game.load.image('background', "assets/background.png");
         game.load.image('player', 'assets/player.png');
+        game.load.image('block', 'assets/block.png');
     }
 
     function create()
@@ -42,6 +50,17 @@ window.onload = function ()
         redButton = game.input.keyboard.addKey(Phaser.Keyboard.E);
         greenButton = game.input.keyboard.addKey(Phaser.Keyboard.R)
         normalButton = game.input.keyboard.addKey(Phaser.Keyboard.Q);
+
+        blockGroup = this.add.group();
+        blockGroup.physicsBodyType = Phaser.Physics.ARCADE;
+        blockGroup.create(50, 'block');
+        blockGroup.setAll('anchor.x', 0.5);
+        blockGroup.setAll('anchor.y', 0.5);
+        blockGroup.setAll('outOfBoundsKill', true);
+        blockGroup.setAll('checkWorldBounds', true);
+        nextBlockAt = 0;
+        blockDelay = 500;
+
     }
 
     function update()
@@ -63,15 +82,53 @@ window.onload = function ()
         if (normalButton.isDown)
         {
             player.tint = 0xFFFFFF;
+            isPlayerNormal = true;
         }
         if (blueButton.isDown)
         {
             player.tint = 0x0004FF;
+            isPlayerBlue = true;
         }
         if (redButton.isDown)
         {
             player.tint = 0xFF0000;
+            isPlayerRed = true;
         }
+        if (greenButton.isDown)
+        {
+            player.tint = 0x26B000;
+            isPlayerGreen = true;
+        }
+
+        SpawnBlock();
+    }
+
+    SpawnBlock()
+    {
+        if (nextBlockAt < time.now)
+        {
+            nextBlockAt = time.now + blockDelay;
+            var block = blockGroup.getFirstExists(false);
+            block.reset(rnd.integerInRange(20, 780), 0);
+            block.body.velocity.y = rnd.integerInRange(30, 60);
+            var i = rnd.integerInRange(1, 4);
+            if (i == 1) {
+                //Normal
+                block.tint = 0xFFFFFF;
+            }
+            if (i == 2) {
+                //Blue
+                block.tint = 0x0004FF;
+            }
+            if (i == 3) {
+                //Red
+                block.tint = 0xFF0000;
+            }
+            if (i == 4) {
+                //Green
+                block.tint = 0x26B000;
+            }
+        }        
     }
 
 
