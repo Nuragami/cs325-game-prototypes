@@ -74,6 +74,7 @@ window.onload = function ()
         greenblock = game.add.sprite(400, 0, 'greenblock');
         greenblock.anchor.setTo(0.5, 0.5);
         game.physics.enable(greenblock, Phaser.Physics.ARCADE);
+
         blockGroup = this.add.group();
         blockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         blockGroup.create(50, 'block');
@@ -81,16 +82,22 @@ window.onload = function ()
         blockGroup.setAll('anchor.y', 0.5);
         blockGroup.setAll('outOfBoundsKill', true);
         blockGroup.setAll('checkWorldBounds', true);
+        blueblockGroup = this.add.group();
+        blueblockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         blueblockGroup.create(50, 'blueblock');
         blueblockGroup.setAll('anchor.x', 0.5);
         blueblockGroup.setAll('anchor.y', 0.5);
         blueblockGroup.setAll('outOfBoundsKill', true);
         blueblockGroup.setAll('checkWorldBounds', true);
+        redblockGroup = this.add.group();
+        redblockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         redblockGroup.create(50, 'redblock');
         redblockGroup.setAll('anchor.x', 0.5);
         redblockGroup.setAll('anchor.y', 0.5);
         redblockGroup.setAll('outOfBoundsKill', true);
         redblockGroup.setAll('checkWorldBounds', true);
+        greenblockGroup = this.add.group();
+        greenblockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         greenblockGroup.create(50, 'greenblock');
         greenblockGroup.setAll('anchor.x', 0.5);
         greenblockGroup.setAll('anchor.y', 0.5);
