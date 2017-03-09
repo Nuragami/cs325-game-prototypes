@@ -137,7 +137,7 @@ window.onload = function ()
 
     function update()
     {
-        timerText.setText("Timer: " + Phaser.Timer.SECOND);
+        timerText.setText("Timer: " + time);
         player.body.velocity.x = 0;
         //left movement
         if (cursors.left.isDown)
@@ -219,22 +219,22 @@ window.onload = function ()
             }            
         }
         //check collision
-        if(game.physics.arcade.overlap(block, player) && isPlayerNormal != false)
+        if(game.physics.arcade.collide(block, player) && isPlayerNormal != false)
         {
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
         }
-        if (game.physics.arcade.overlap(blueblock, player) && isPlayerBlue != false)
+        if (game.physics.arcade.collide(blueblock, player) && isPlayerBlue != false)
         {
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
         }
-        if (game.physics.arcade.overlap(redblock, player) && isPlayerRed != false)
+        if (game.physics.arcade.collide(redblock, player) && isPlayerRed != false)
         {
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
         }
-        if (game.physics.arcade.overlap(greenblock, player) && isPlayerGreen != false)
+        if (game.physics.arcade.collide(greenblock, player) && isPlayerGreen != false)
         {
             lives = lives - 1;
             livesText.setText("You have " + lives + " lives left!");
