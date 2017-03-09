@@ -53,7 +53,7 @@ window.onload = function ()
         //player
         player = game.add.sprite(game.world.centerX, game.world.centerY + 250, 'player');
         game.physics.enable(player, Phaser.Physics.ARCADE);
-        player.body.bounce.y = 0.1;
+        //player.body.bounce.y = 0.1;
         player.body.collideWorldBounds = true;
         //player.body.setSize(60, 90, 5, 16);
         player.anchor.setTo(0.5, 1);
