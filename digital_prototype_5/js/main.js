@@ -25,8 +25,10 @@ window.onload = function ()
     var greenblock;
     var nextBlockAt;
     var blockDelay;
-    var time;
+    var time = 0;
     var timerText;
+    var lives = 5;
+    var livesText;
 
     function preload()
     {
@@ -116,11 +118,21 @@ window.onload = function ()
         blockDelay = 500;
         
         //Timer text
-        timerText = game.add.text(game.world.centerX - 650, game.world.centerY - 250, "Time: ", {
+        timerText = game.add.text(game.world.centerX + 100, game.world.centerY + 275, "Time: ", {
             font: "20px Arial",
-            fill: "#ff0044",
+            fill: "#FFFFFF",
             align: "center"
         });
+        timerText.anchor.setTo(0.5, 0.5);
+        timerText.fixedToCamera = true;
+        //Lives text
+        livesText = game.add.text(game.world.centerX - 100, game.world.centerY + 275, "You have 5 lives left!", {
+            font: "20px Arial",
+            fill: "#FFFFFF",
+            align: "center"
+        });
+        livesText.anchor.setTo(0.5, 0.5);
+        livesText.fixedToCamera = true;
     }
 
     function update()
@@ -204,9 +216,29 @@ window.onload = function ()
                 game.physics.enable(greenblock, Phaser.Physics.ARCADE);
                 greenblock.reset(getRandomInt(20, 780), 0);
                 greenblock.body.velocity.y = getRandomInt(100, 150);
-            }
-            
+            }            
         }
+        //check collision
+        if(game.physics.arcade.overlap(block, player) && isPlayerNormal != false)
+        {
+            lives = lives - 1;
+            livesText.setText("You have " + lives + " lives left!");
+        }
+        if (game.physics.arcade.overlap(blueblock, player) && isPlayerBlue != false)
+        {
+            lives = lives - 1;
+            livesText.setText("You have " + lives + " lives left!");
+        }
+        if (game.physics.arcade.overlap(redblock, player) && isPlayerRed != false)
+        {
+            lives = lives - 1;
+            livesText.setText("You have " + lives + " lives left!");
+        }
+        if (game.physics.arcade.overlap(greenblock, player) && isPlayerGreen != false)
+        {
+            lives = lives - 1;
+            livesText.setText("You have " + lives + " lives left!");
+        }        
     }
 
     function getRandomInt(min, max)
