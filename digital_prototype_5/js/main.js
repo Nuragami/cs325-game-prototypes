@@ -61,22 +61,24 @@ window.onload = function ()
         redButton = game.input.keyboard.addKey(Phaser.Keyboard.E);
         greenButton = game.input.keyboard.addKey(Phaser.Keyboard.R)
         normalButton = game.input.keyboard.addKey(Phaser.Keyboard.Q);
+
         //block
-        block = game.add.sprite(400, 0, 'block');
-        block.anchor.setTo(0.5, 0.5);
-        game.physics.enable(block, Phaser.Physics.ARCADE);
+        //block = game.add.sprite(400, 0, 'block');
+        //block.anchor.setTo(0.5, 0.5);
+        //game.physics.enable(block, Phaser.Physics.ARCADE);
         //blue
-        blueblock = game.add.sprite(400, 0, 'blueblock');
-        blueblock.anchor.setTo(0.5, 0.5);
-        game.physics.enable(blueblock, Phaser.Physics.ARCADE);
+        //blueblock = game.add.sprite(400, 0, 'blueblock');
+        //blueblock.anchor.setTo(0.5, 0.5);
+        //game.physics.enable(blueblock, Phaser.Physics.ARCADE);
         //red
-        redblock = game.add.sprite(400, 0, 'redblock');
-        redblock.anchor.setTo(0.5, 0.5);
-        game.physics.enable(redblock, Phaser.Physics.ARCADE);
+        //redblock = game.add.sprite(400, 0, 'redblock');
+        //redblock.anchor.setTo(0.5, 0.5);
+        //game.physics.enable(redblock, Phaser.Physics.ARCADE);
         //green
-        greenblock = game.add.sprite(400, 0, 'greenblock');
-        greenblock.anchor.setTo(0.5, 0.5);
-        game.physics.enable(greenblock, Phaser.Physics.ARCADE);
+        //greenblock = game.add.sprite(400, 0, 'greenblock');
+        //greenblock.anchor.setTo(0.5, 0.5);
+        //game.physics.enable(greenblock, Phaser.Physics.ARCADE);
+
         //blockgroup
         blockGroup = this.add.group();
         blockGroup.physicsBodyType = Phaser.Physics.ARCADE;
@@ -162,7 +164,7 @@ window.onload = function ()
                 block.anchor.setTo(0.5, 0.5);
                 game.physics.enable(block, Phaser.Physics.ARCADE);
                 block.reset(getRandomInt(20, 780), 0);
-                block.body.velocity.y = getRandomInt(30, 60);
+                block.body.velocity.y = getRandomInt(100, 150);
             }
             if (i == 2)
             {
@@ -172,7 +174,7 @@ window.onload = function ()
                 blueblock.anchor.setTo(0.5, 0.5);
                 game.physics.enable(blueblock, Phaser.Physics.ARCADE);
                 blueblock.reset(getRandomInt(20, 780), 0);
-                blueblock.body.velocity.y = getRandomInt(30, 60);
+                blueblock.body.velocity.y = getRandomInt(100, 150);
             }
             if (i == 3)
             {
@@ -182,7 +184,7 @@ window.onload = function ()
                 redblock.anchor.setTo(0.5, 0.5);
                 game.physics.enable(redblock, Phaser.Physics.ARCADE);
                 redblock.reset(getRandomInt(20, 780), 0);
-                redblock.body.velocity.y = getRandomInt(30, 60);
+                redblock.body.velocity.y = getRandomInt(100, 150);
             }
             if (i == 4)
             {
@@ -192,7 +194,7 @@ window.onload = function ()
                 greenblock.anchor.setTo(0.5, 0.5);
                 game.physics.enable(greenblock, Phaser.Physics.ARCADE);
                 greenblock.reset(getRandomInt(20, 780), 0);
-                greenblock.body.velocity.y = getRandomInt(30, 60);
+                greenblock.body.velocity.y = getRandomInt(100, 150);
             }
             
         }
