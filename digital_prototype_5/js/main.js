@@ -109,25 +109,29 @@ window.onload = function ()
         {
             nextBlockAt = time.now + blockDelay;
             var block = blockGroup.getFirstExists(false);
-            block.reset(rnd.integerInRange(20, 780), 0);
-            block.body.velocity.y = rnd.integerInRange(30, 60);
-            var i = rnd.integerInRange(1, 4);
-            if (i == 1) {
+            if (i == 1)
+            {
                 //Normal
                 block.tint = 0xFFFFFF;
             }
-            if (i == 2) {
+            if (i == 2)
+            {
                 //Blue
                 block.tint = 0x0004FF;
             }
-            if (i == 3) {
+            if (i == 3)
+            {
                 //Red
                 block.tint = 0xFF0000;
             }
-            if (i == 4) {
+            if (i == 4)
+            {
                 //Green
                 block.tint = 0x26B000;
             }
+            block.reset(rnd.integerInRange(20, 780), 0);
+            block.body.velocity.y = rnd.integerInRange(30, 60);
+            var i = rnd.integerInRange(1, 4);
         }        
     }
 
