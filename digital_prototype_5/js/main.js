@@ -105,7 +105,7 @@ window.onload = function ()
         {
             nextBlockAt = this.time.now + blockDelay;
             var block = blockGroup.getFirstExists(false);
-            var i = getRandomInt(-1, 3);
+            var i = getRandomInt(-1, 4);
             if (i == 1)
             {
                 //Normal
