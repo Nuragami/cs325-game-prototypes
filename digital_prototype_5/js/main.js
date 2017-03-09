@@ -109,6 +109,9 @@ window.onload = function ()
         {
             nextBlockAt = this.time.now + blockDelay;
             var block = blockGroup.getFirstExists(false);
+            block = game.add.sprite(400, 0, 'block');
+            block.anchor.setTo(0.5, 0.5);
+            game.physics.enable(block, Phaser.Physics.ARCADE);
             var i = getRandomInt(-1, 4);
             if (i == 1)
             {
