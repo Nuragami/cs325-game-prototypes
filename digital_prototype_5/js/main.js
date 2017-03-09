@@ -26,7 +26,7 @@ window.onload = function ()
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
         //player
-        player = game.add.sprite(game.world.centerX, game.world.centerY, 'player');
+        player = game.add.sprite(game.world.centerX, game.world.centerY - 200, 'player');
         game.physics.enable(player, Phaser.Physics.ARCADE);
         player.body.bounce.y = 0.1;
         player.body.collideWorldBounds = true;
@@ -51,7 +51,7 @@ window.onload = function ()
         //left movement
         if (cursors.left.isDown)
         {
-            player.body.velocity.x = -150;
+            player.body.velocity.x = -250;
 
             //if (facing != 'left')
             //{
@@ -62,7 +62,7 @@ window.onload = function ()
         //right movement
         else if (cursors.right.isDown)
         {
-            player.body.velocity.x = 150;
+            player.body.velocity.x = 250;
 
             //if (facing != 'right')
             //{
