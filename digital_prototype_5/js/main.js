@@ -143,7 +143,8 @@ window.onload = function ()
     }
 
     function update() {
-        timerText.setText("Timer: " + time);
+        time = game.time;
+        //timerText.setText("Timer: " + time);
         player.body.velocity.x = 0;
         //left movement
         if (cursors.left.isDown) {
