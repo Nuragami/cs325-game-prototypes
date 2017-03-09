@@ -11,7 +11,7 @@ window.onload = function ()
     var normalButton;
     var background;
     var player;
-    var isPlayerNormal;
+    var isPlayerNormal = true;
     var isPlayerBlue;
     var isPlayerRed;
     var isPlayerGreen;
@@ -155,23 +155,39 @@ window.onload = function ()
         if (normalButton.isDown)
         {
             player.tint = 0xFFFFFF;
-            isPlayerNormal = true;
+            isPlayerNormal = true;           
+            isPlayerBlue = false;
+            isPlayerRed = false;
+            isPlayerGreen = false;
         }
         if (blueButton.isDown)
         {
             player.tint = 0x0004FF;
             isPlayerBlue = true;
+            isPlayerNormal = false;           
+            isPlayerRed = false;
+            isPlayerGreen = false;
         }
         if (redButton.isDown)
         {
             player.tint = 0xFF0000;
             isPlayerRed = true;
+            isPlayerNormal = false;
+            isPlayerBlue = false;            
+            isPlayerGreen = false;
         }
         if (greenButton.isDown)
         {
             player.tint = 0x26B000;
             isPlayerGreen = true;
+            isPlayerNormal = false;
+            isPlayerBlue = false;
+            isPlayerRed = false;            
         }
+        isPlayerNormal = false;
+        isPlayerBlue = false;
+        isPlayerRed= false;
+        isPlayerGreen = false;
 
         //SpawnBlock();
         if (nextBlockAt < this.time.now)
