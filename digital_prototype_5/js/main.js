@@ -135,7 +135,7 @@ window.onload = function ()
         livesText.anchor.setTo(0.5, 0.5);
         livesText.fixedToCamera = true;
 
-        isPlayerNormal = true;
+        isPlayerNormal = false;
         isPlayerBlue = false;
         isPlayerRed = false;
         isPlayerGreen = false;
