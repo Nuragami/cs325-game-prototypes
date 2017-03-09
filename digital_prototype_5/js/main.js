@@ -51,7 +51,7 @@ window.onload = function ()
         greenButton = game.input.keyboard.addKey(Phaser.Keyboard.R)
         normalButton = game.input.keyboard.addKey(Phaser.Keyboard.Q);
 
-        blockGroup = this.add.group();
+        blockGroup = add.group();
         blockGroup.physicsBodyType = Phaser.Physics.ARCADE;
         blockGroup.create(50, 'block');
         blockGroup.setAll('anchor.x', 0.5);
@@ -103,7 +103,7 @@ window.onload = function ()
         SpawnBlock();
     }
 
-    SpawnBlock()
+    void SpawnBlock()
     {
         if (nextBlockAt < time.now)
         {
