@@ -192,7 +192,7 @@ window.onload = function ()
             if (i == 1) {
                 nextBlockAt = this.time.now + blockDelay;
                 block = blockGroup.getFirstExists(false);
-                block = game.add.sprite('block');
+                block = game.add.sprite(75, 75,'block');
                 block.anchor.setTo(0.5, 0.5);
                 game.physics.enable(block, Phaser.Physics.ARCADE);
                 block.reset(getRandomInt(20, 780), 0);
@@ -201,7 +201,7 @@ window.onload = function ()
             if (i == 2) {
                 nextBlockAt = this.time.now + blockDelay;
                 blueblock = blueblockGroup.getFirstExists(false);
-                blueblock = game.add.sprite('blueblock');
+                blueblock = game.add.sprite(75,75,'blueblock');
                 blueblock.anchor.setTo(0.5, 0.5);
                 game.physics.enable(blueblock, Phaser.Physics.ARCADE);
                 blueblock.reset(getRandomInt(20, 780), 0);
@@ -210,7 +210,7 @@ window.onload = function ()
             if (i == 3) {
                 nextBlockAt = this.time.now + blockDelay;
                 redblock = redblockGroup.getFirstExists(false);
-                redblock = game.add.sprite('redblock');
+                redblock = game.add.sprite(75,75,'redblock');
                 redblock.anchor.setTo(0.5, 0.5);
                 game.physics.enable(redblock, Phaser.Physics.ARCADE);
                 redblock.reset(getRandomInt(20, 780), 0);
@@ -219,7 +219,7 @@ window.onload = function ()
             if (i == 4) {
                 nextBlockAt = this.time.now + blockDelay;
                 greenblock = greenblockGroup.getFirstExists(false);
-                greenblock = game.add.sprite('greenblock');
+                greenblock = game.add.sprite(75,75,'greenblock');
                 greenblock.anchor.setTo(0.5, 0.5);
                 game.physics.enable(greenblock, Phaser.Physics.ARCADE);
                 greenblock.reset(getRandomInt(20, 780), 0);
